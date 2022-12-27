@@ -28,3 +28,4 @@ button1.onclick = function muerte() {
 function muertosFunction (item, index) {
   document.getElementById("titulo3").innerHTML += index + ":" + item + "<br>"  
 }
+
