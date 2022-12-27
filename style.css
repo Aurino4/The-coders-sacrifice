@@ -1,5 +1,53 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
 
-#overlay { 
+body {
+    background-image: url(/images/Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coders {
+    border: #F00 solid 1px;
+    margin: 4%;
+    width: 20%;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+}
+.machine {
+    background-image: url(/images/maquina-cortada.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 90vh;
+    height: 44vw;
+}
+
+.death {
+    border: #F00 solid 1px;
+    margin: 4%;
+    width: 20%;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+}
+
+.juego img:nth-child(1) {
+    width: 100%;
+}
+
+#overlay {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -11,8 +59,7 @@
     display: block;
 }
 
-
-#popupBody{
+#popupBody {
     width: 46%;
     padding: 2%;
     border-radius: 15px;
@@ -21,9 +68,10 @@
     position: relative;
     margin: 20% auto;
     transition: all 5s ease-in-out;
-    
+
 }
-#cerrar{
+
+#cerrar {
     position: absolute;
     top: 20px;
     right: 30px;
@@ -34,79 +82,12 @@
     transition: all 200ms;
 }
 
-
-.copy{
-    display:flex;
+.copy {
+    display: flex;
     align-items: center;
     color: white;
-    background:linear-gradient(45deg, black, grey,rgb(255,70,42));
+    background: linear-gradient(45deg, black, grey, rgb(255, 70, 42));
     height: 8vh;
     padding-left: 12vh;
 
 }
-*{
-margin: 0px;
-padding:0px;
-}
-
-body {
-    background-image: url(/images/Background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-}
-
-
-.machine {
-    background-image: url(/images/maquina-cortada.png);
-    background-size: 1000px 1000px;
-    width: 1000px;
-    height: 1000px;
-}
-
-.juego img:nth-child(1){
-    width: 100%;
-}
-
-
-
-
-img {
-    height: 1080px;
-}
-.maquina{
-    width: 1350px;
-    height: 620px;
-    z-index: -1;
-    
-}
-
-.contenedor1 {
-    
-    width:567px;
-    height: 240px;
-    z-index: 3;
-    top: 275px;
-    left: 395px;
-    right:100px;
-    bottom: 300px;
-    
-    
-
-}
-.south {
-    width:auto;
-    height:100%;
-
-}
-.park {
-    width: 567px;
-    height: 240px;
-    top: 275px;
-    left: 395px;
-    right:100px;
-    z-index:3;
-    
-}
-
