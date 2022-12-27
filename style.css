@@ -63,17 +63,29 @@ body {
     background-size: 1000px 1000px;
     width: 1000px;
     height: 1000px;
+
+    
 }
 
 .juego img:nth-child(1){
-    width: 100%;
+    width: 47%;
+    height: 62%;
+ top: 447px;
+ left: 360px;
+
+
+    position:absolute
 }
 
 
 
 
-img {
-    height: 1080px;
+.img {
+    width: 500px;
+    height: 200px;
+    
+    
+    
 }
 .maquina{
     width: 1350px;
@@ -82,6 +94,17 @@ img {
     
 }
 
+.juego{ 
+    width:567px;
+    height: 300px;
+    z-index: 3;
+    top: 500px;
+    left: 395px;
+    
+    
+
+
+}
 .contenedor1 {
     
     width:567px;
