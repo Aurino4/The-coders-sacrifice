@@ -1,19 +1,16 @@
 
-.overlay { 
+#overlay { 
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.7);
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
-}
-.overlay:target{
     visibility: visible;
     opacity: 1;
-        }
+    display: block;
+}
+
 
 #popupBody{
     width: 46%;
@@ -24,7 +21,7 @@
     position: relative;
     margin: 20% auto;
     transition: all 5s ease-in-out;
-
+    
 }
 #cerrar{
     position: absolute;
@@ -91,7 +88,7 @@ padding:0px;
     left: 395px;
     right:100px;
     bottom: 300px;
-    position: absolute;
+    
     
 
 }
