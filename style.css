@@ -34,7 +34,6 @@
     transition: all 200ms;
 }
 
-
 .copy{
     display:flex;
     align-items: center;
@@ -44,6 +43,21 @@
     padding-left: 12vh;
 
 }
+video {
+    width: 100%;
+    position: absolute;
+    z-index: -1;   
+}
+.press {
+    position: fixed;
+    margin-top: 80vh;
+    height: 10vh;
+    width: 15vw;
+    color: #F00;
+    background-color: black;
+    cursor: pointer;
+}
+
 *{
 margin: 0px;
 padding:0px;
