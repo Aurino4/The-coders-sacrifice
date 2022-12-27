@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .copy{
     display:flex;
     align-items: center;
@@ -7,3 +8,67 @@
     padding-left: 12vh;
 
 }
+=======
+*{
+margin: 0px;
+padding:0px;
+}
+
+/*body {
+    background-image: url(/images/BackgroundPage-06.jpg);
+    width: 100%;
+    height: 100%;*/
+   
+/*}*/
+
+
+
+.contenedor {
+    
+    
+    width: 1350px;
+    height: 620px;
+    background-size: cover;
+    position: absolute;
+}
+.fondomaquina{
+    height: 100%;
+    width: auto;
+    
+
+}
+.maquina{
+    width: 1350px;
+    height: 620px;
+    z-index: -1;
+    
+}
+
+.contenedor1 {
+    
+    width:567px;
+    height: 240px;
+    z-index: 3;
+    top: 275px;
+    left: 395px;
+    right:100px;
+    bottom: 300px;
+    position: absolute;
+    
+
+}
+.south {
+    width:auto;
+    height:100%;
+
+}
+.park {
+    width: 567px;
+    height: 240px;
+    top: 275px;
+    left: 395px;
+    right:100px;
+    z-index:3;
+    
+}
+>>>>>>> 9f85acd0edb682a410417e39a157e020b37c5608
