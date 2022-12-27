@@ -49,28 +49,31 @@ margin: 0px;
 padding:0px;
 }
 
-/*body {
-    background-image: url(/images/BackgroundPage-06.jpg);
-    width: 100%;
-    height: 100%;*/
-   
-/*}*/
-
-
-
-.contenedor {
-    
-    
-    width: 1350px;
-    height: 620px;
+body {
+    background-image: url(/images/Background.png);
     background-size: cover;
-    position: absolute;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
 }
-.fondomaquina{
-    height: 100%;
-    width: auto;
-    
 
+
+.machine {
+    background-image: url(/images/maquina-cortada.png);
+    background-size: 1000px 1000px;
+    width: 1000px;
+    height: 1000px;
+}
+
+.juego img:nth-child(1){
+    width: 100%;
+}
+
+
+
+
+img {
+    height: 1080px;
 }
 .maquina{
     width: 1350px;

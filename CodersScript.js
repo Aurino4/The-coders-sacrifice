@@ -1,3 +1,4 @@
+let overlay = document.getElementById("overlay")
 let cerrar = document.getElementById ("cerrar")
 var overlay = document.getElementById("overlay")
 
