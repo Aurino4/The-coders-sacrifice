@@ -1,5 +1,5 @@
-let overlay = document.getElementsBy("overlay")
 let cerrar = document.getElementById ("cerrar")
+var overlay = document.getElementById("overlay")
 
 console.info("hola")
 // let candidatos = ["Martín","Pablo", "Eugenio", "Ana", "Guadalupe", "Jonas"]
@@ -33,7 +33,6 @@ function muertosFunction (item, index) {
   document.getElementById("titulo3").innerHTML += index + ":" + item + "<br>"  
 };
 
-overlay.onclick = function cerrarPopUp(){
-    overlay.style.display = "none";
-    
+cerrar.onclick = function cerrarPopUp(){
+   overlay.style.display = "none";    
 }
