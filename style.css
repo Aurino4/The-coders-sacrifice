@@ -32,8 +32,13 @@
     text-decoration: none;
     color: #F00;
     transition: all 200ms;
+    cursor: pointer;
 }
-
+.box {
+    margin-top: 1vh;
+    padding: 1vh;
+    transition: all 5s ease-in-out;
+}
 .copy{
     display:flex;
     align-items: center;
@@ -54,9 +59,15 @@ video {
     height: 10vh;
     width: 15vw;
     color: #F00;
-    background-color: black;
+    background-color: rgb(5, 5, 5);
     cursor: pointer;
 }
+.link_buttonIntro{
+    position: fixed;
+    margin-right: 15vw;
+}
+
+
 
 *{
 margin: 0px;

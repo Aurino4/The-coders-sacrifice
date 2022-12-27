@@ -1,20 +1,17 @@
+
+
 let overlay = document.getElementById("overlay")
 let cerrar = document.getElementById ("cerrar")
+cerrar.onclick = function cerrarPopUp(){
+   overlay.style.display = "none";    
+}
 
-
-console.info("hola")
 let candidatos = ["Martín","Pablo", "Eugenio", "Ana", "Guadalupe", "Jonas"]
 let muertos = []
 candidatos.forEach(candidatosFunction)
-//muertos.forEach(muertosFunction)
 function getRandomInt(max) {
    return Math.floor(Math.random() * max);
 }
-
-//console.info(getRandomInt(candidatos.length))
-
-//---------------------------------------------
-
 button1.onclick = function muerte() {
    let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
    muertos.push(muerto)
@@ -24,7 +21,6 @@ button1.onclick = function muerte() {
 }
 
  function candidatosFunction (item, index) {
-  
   return document.getElementById("titulo2").innerHTML += index + ":" + item + "<br>"
  }
 
@@ -36,9 +32,6 @@ function vertical() {
   muertos.forEach(muertosFunction) 
 }
 
-cerrar.onclick = function cerrarPopUp(){
-   overlay.style.display = "none";    
-}
-var audio = document.getElementById("audio");
 
+var audio = document.getElementById("audio")
 audio.play();
