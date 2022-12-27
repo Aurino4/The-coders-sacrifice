@@ -24,7 +24,8 @@ body {
     width: 20%;
     color: #FFF;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .machine {
     background-image: url(/images/maquina-cortada.png);
@@ -32,6 +33,9 @@ body {
     background-repeat: no-repeat;
     width: 90vh;
     height: 44vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .death {
@@ -40,11 +44,18 @@ body {
     width: 20%;
     color: #FFF;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+.juego {
+    display: flex;
+    justify-content: center;
+}
 .juego img:nth-child(1) {
-    width: 100%;
+    width: 62%;
+    transform: translateY(375px);
+    z-index: -1;
 }
 
 #overlay {
@@ -91,3 +102,30 @@ body {
     padding-left: 12vh;
 
 }
+video {
+    width: 100%;
+    position: absolute;
+    z-index: -1;   
+}
+.press {
+    position: fixed;
+    margin-top: 80vh;
+    height: 10vh;
+    width: 15vw;
+    color: #F00;
+    background-color: black;
+    cursor: pointer;
+}
+
+.buttonRed {
+    height: 50px;
+    width: 100px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transform: translateY(425px);
+    margin: 15px;
+}
+
+
+
