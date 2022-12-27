@@ -1,6 +1,6 @@
 let overlay = document.getElementById("overlay")
 let cerrar = document.getElementById ("cerrar")
-var overlay = document.getElementById("overlay")
+
 
 console.info("hola")
 // let candidatos = ["Martín","Pablo", "Eugenio", "Ana", "Guadalupe", "Jonas"]
