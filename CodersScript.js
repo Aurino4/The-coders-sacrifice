@@ -1,37 +1,42 @@
 
 
 let overlay = document.getElementById("overlay")
-let cerrar = document.getElementById ("cerrar")
-cerrar.onclick = function cerrarPopUp(){
-   overlay.style.display = "none";    
+let cerrar = document.getElementById("cerrar")
+
+cerrar.onclick = function cerrarPopUp() {
+  overlay.style.display = "none";
 }
 
-let candidatos = ["Martín","Pablo", "Eugenio", "Ana", "Guadalupe", "Jonas"]
+console.info("hola")
+let candidatos = ["Martín", "Pablo", "Eugenio", "Ana", "Guadalupe", "Jonas"]
 let muertos = []
+
 candidatos.forEach(candidatosFunction)
 function getRandomInt(max) {
-   return Math.floor(Math.random() * max);
+  return Math.floor(Math.random() * max);
 }
 button1.onclick = function muerte() {
-   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
-   muertos.push(muerto)
-   document.getElementById("titulo2").innerHTML = "";
-   document.getElementById("titulo3").innerHTML = "";
-   vertical()
+  let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
+  muertos.push(muerto)
+  document.getElementById("coders").innerHTML = "";
+  document.getElementById("death").innerHTML = "";
+  vertical()
 }
 
- function candidatosFunction (item, index) {
-  return document.getElementById("titulo2").innerHTML += index + ":" + item + "<br>"
- }
-
-function muertosFunction (item, index) { 
-  document.getElementById("titulo3").innerHTML += index + ":" + item + "<br>"  
+function candidatosFunction(item, index) {
+  return document.getElementById("coders").innerHTML +=item + "<br>"
 }
+
+function muertosFunction(item, index) {
+  document.getElementById("death").innerHTML +=item + "<br>"
+}
+
 function vertical() {
   candidatos.forEach(candidatosFunction)
-  muertos.forEach(muertosFunction) 
+  muertos.forEach(muertosFunction)
 }
 
+var audio = document.getElementById("audio");
 
 var audio = document.getElementById("audio")
 audio.play();
