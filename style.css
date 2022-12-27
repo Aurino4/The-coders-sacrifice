@@ -1,3 +1,4 @@
+
 .overlay { 
     position: fixed;
     top: 0;
@@ -36,6 +37,16 @@
     transition: all 200ms;
 }
 
+
+.copy{
+    display:flex;
+    align-items: center;
+    color: white;
+    background:linear-gradient(45deg, black, grey,rgb(255,70,42));
+    height: 8vh;
+    padding-left: 12vh;
+
+}
 *{
 margin: 0px;
 padding:0px;
@@ -98,3 +109,4 @@ padding:0px;
     z-index:3;
     
 }
+
