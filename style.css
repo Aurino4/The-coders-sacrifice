@@ -47,7 +47,14 @@ body {
     align-items: center;
     flex-direction: column;
 }
-
+#death {
+    text-transform: uppercase;
+    text-align: center;
+}
+#coders {
+    text-transform: uppercase;
+    text-align: center;
+}
 .juego {
     display: flex;
     justify-content: center;
@@ -57,7 +64,14 @@ body {
     transform: translateY(375px);
     z-index: -1;
 }
-
+#kyle {
+    height: 5vh;
+    position: relative;
+    top:5vh;   
+}
+#prueba {
+    height: 5vh;
+}
 #overlay {
     position: fixed;
     top: 0;
