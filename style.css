@@ -111,8 +111,9 @@ h2 {
     font-size: 2vw;
 }
 
-p {
+ul {
     font-size: 1vw;
+    list-style: none;
 }
 
 /* Buttons
