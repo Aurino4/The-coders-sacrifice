@@ -18,13 +18,11 @@ function getRandomInt(max) {
 }
 button1.onclick = function muerte() {
   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
-  muertos.push(muerto)
-  document.getElementById("coders").innerHTML = "";
-  document.getElementById("death").innerHTML = "";
+  muertos.push(muerto[0].name)
   printing() 
 }
 
-  function createList() {
+  function createCandidatosList() {
     let toPrint = ""
     candidatos.forEach(item => {
       toPrint += `<li>${item.name}</li>`
@@ -34,26 +32,28 @@ button1.onclick = function muerte() {
 
   function createImg(){
     let toPrint = ""
-    candidatos.forEach((item, i) => {
-      toPrint += `<img id="${item.name + i}" src="${item.image}">`
+    candidatos.forEach(item => {
+      toPrint += `<img src="${item.image}">`
     });
     return toPrint
   }
-
-function muertosFunction(item, index) {
-  document.getElementById("death").innerHTML +=item + "<br>"
+console.info("resultado es igual a " + resultado)
+function createMuertosList() {
+  let toPrint = ""
+    muertos.forEach((item, i) => {
+      toPrint += `<li>${item}</li>`
+    });
+    return toPrint
 }
 
 function printing() {
-  document.getElementById("coders").innerHTML = createList()
+  document.getElementById("coders").innerHTML = createCandidatosList()
   document.getElementById("members").innerHTML = createImg()
-
-  // document.getElementById("coders").innerHTML += `<li>${item}</li>`
-  // muertos.forEach(muertosFunction)
+  document.getElementById("death").innerHTML = createMuertosList()
 }
   button_añadir.onclick = function añadir() {
-  let palabras = document.getElementById('box').value
-  candidatos.push({name:palabras, image:"./images/kyle.png"})
+  let value = document.getElementById('box').value
+  candidatos.push({name:value, image:"./images/kyle.png"})
   document.getElementById('box').value = ""; 
   // for (var i = 0; i < candidatos.length; i++){
     printing()
