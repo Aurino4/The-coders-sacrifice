@@ -8,14 +8,7 @@ cerrar.onclick = function cerrarPopUp() {
 }
 
 console.info("hola")
-var candidatos = [{
-  "name":"",
-  "image":""
-},
-{
-   "name":"",
-   "image":""
-}
+var candidatos = [
 ]
 //let candidatos = []
 let muertos = []
@@ -49,31 +42,34 @@ button1.onclick = function muerte() {
 console.info("resultado es igual a " + resultado)
 function createMuertosList() {
   let toPrint = ""
-    muertos.forEach((item, i) => {
+    muertos.forEach((item) => {
       toPrint += `<li>${item}</li>`
     });
     return toPrint
 }
 
 function printing() {
-  document.getElementById("coders").innerHTML = createCandidatosList()
+  document.getElementById("coderses").innerHTML = createCandidatosList()
   document.getElementById("members").innerHTML = createImg()
   document.getElementById("death").innerHTML = createMuertosList()
 }
   button_añadir.onclick = function añadir() {
-  let palabras = document.getElementById('box').value.split(" ");
-  for (var i = 0; i < candidatos.length; i++){
-    candidatos[i]["name"] = palabras;
-    candidatos [i]["image"] =  avatar()
-  } 
-  candidatos = candidatos.concat(palabras);
+  let value = document.getElementById('box').value
+  candidatos.push({name:value, image:"./images/kyle.png"})
   document.getElementById('box').value = ""; 
-  document.getElementById("coders").innerHTML = candidatos.join("<br>");
-  }
+  // for (var i = 0; i < candidatos.length; i++){
+    printing()
+  //   // candidatos [i]["image"] = avatar()
+  // } 
+  // candidatos = candidatos.concat(palabras);
+
+  // document.getElementById("coders").innerHTML = candidatos.join("<br>");
+
+}
 
 function avatar() {
   let imagenes = ["./images/kyle.png"]
-  document.getElementById("kyle" = imagenes[0])
+  document.getElementById("kyle").src = imagenes[0]
 }
 //  function avatar1() {
 //   let imagenes = ["./images/kyle.png"]
@@ -81,7 +77,7 @@ function avatar() {
 // }
 
 
-var audio = document.getElementById("audio");
 
-var audio = document.getElementById("audio")
-// audio.play();
+
+// var audio = document.getElementById("audio")
+// // audio.play();

@@ -61,7 +61,7 @@ body {
     text-align: center;
 }
 
-#coders {
+#coderses {
     text-transform: uppercase;
     text-align: center;
 }
@@ -148,22 +148,6 @@ ul {
 ***           POPUP           ***
 ********************************/
 
-#kyle {
-    height: 5vh;
-    position: relative;
-    top: 5vh;
-}
-
-#prueba {
-    height: 5vh;
-}
-
-
-
-/********************************
-***           POPUP           ***
-********************************/
-
 #overlay {
     position: fixed;
     top: 0;
@@ -199,7 +183,10 @@ ul {
     transition: all 200ms;
     cursor: pointer;
 }
-
+.playWith{
+    font-family:'3 theHard';
+}
+ 
 .copy {
     bottom: 0;
     display: flex;
