@@ -57,7 +57,7 @@ function printing() {
 
 function avatar() {
   let imagenes = ["./images/kyle.png"]
-  document.getElementById("kyle" = imagenes[0])
+  document.getElementById("kyle") = imagenes[0]
 }
 //  function avatar1() {
 //   let imagenes = ["./images/kyle.png"]
