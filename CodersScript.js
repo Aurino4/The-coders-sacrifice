@@ -8,10 +8,18 @@ cerrar.onclick = function cerrarPopUp() {
 }
 
 console.info("hola")
-let candidatos = ["Martín", "Pablo", "Eugenio", "Ana", "Guadalupe", "Jonas"]
+var candidatos = [{
+  "name":"",
+  "image":""
+},
+{
+   "name":"",
+   "image":""
+}
+]
+//let candidatos = []
 let muertos = []
 
-candidatos.forEach(candidatosFunction)
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
@@ -20,21 +28,42 @@ button1.onclick = function muerte() {
   muertos.push(muerto)
   document.getElementById("coders").innerHTML = "";
   document.getElementById("death").innerHTML = "";
-  vertical()
+  printing() 
 }
 
-function candidatosFunction(item, index) {
-  return document.getElementById("coders").innerHTML +=item + "<br>"
+  function candidatosFunction(item, index) {
+  return document.getElementById("coders").innerHTML += item + "<br>"
+
 }
 
 function muertosFunction(item, index) {
   document.getElementById("death").innerHTML +=item + "<br>"
 }
 
-function vertical() {
+function printing() {
   candidatos.forEach(candidatosFunction)
   muertos.forEach(muertosFunction)
 }
+  button_añadir.onclick = function añadir() {
+  let palabras = document.getElementById('box').value.split(" ");
+  for (var i = 0; i < candidatos.length; i++){
+    candidatos[i]["name"] = palabras;
+    candidatos [i]["image"] =  avatar()
+  } 
+  candidatos = candidatos.concat(palabras);
+  document.getElementById('box').value = ""; 
+  document.getElementById("coders").innerHTML = candidatos.join("<br>");
+  }
+
+function avatar() {
+  let imagenes = ["./images/kyle.png"]
+  document.getElementById("kyle" = imagenes[0])
+}
+//  function avatar1() {
+//   let imagenes = ["./images/kyle.png"]
+//   document.getElementById("prueba").src = imagenes[0]
+// }
+
 
 var audio = document.getElementById("audio");
 

@@ -55,7 +55,14 @@ body {
 .machinePhoto img:nth-child(1) {
     height: 100%;
 }
-
+#death {
+    text-transform: uppercase;
+    text-align: center;
+}
+#coders {
+    text-transform: uppercase;
+    text-align: center;
+}
 .juego {
     z-index: -1;
     display: flex;
@@ -138,6 +145,14 @@ ul {
 ***           POPUP           ***
 ********************************/
 
+#kyle {
+    height: 5vh;
+    position: relative;
+    top:5vh;   
+}
+#prueba {
+    height: 5vh;
+}
 #overlay {
     position: fixed;
     top: 0;
