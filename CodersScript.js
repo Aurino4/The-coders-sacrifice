@@ -41,17 +41,16 @@ function printing() {
   button_añadir.onclick = function añadir() {
   let palabras = document.getElementById('box').value.split(" ");
   for (var i = 0; i < candidatos.length; i++){
-    if (i=0){candidatos.push({name:palabras, image:"./images/kyle.png"})
-  }else{
     candidatos[i]["name"] = palabras;
     //candidatos [i]["image"] =  avatar()
   }
-  } 
   candidatos = candidatos.concat(palabras);
   document.getElementById('box').value = ""; 
   document.getElementById("coders").innerHTML = candidatos.join("<br>");
-  }
-    	                                
+
+} 
+  //candidatos.push({name:palabras, image:"./images/kyle.png"})---- este es el objeto
+                                
 // function avatar() {
 //   let imagenes = ["./images/kyle.png"]
 //   document.getElementById("kyle").src = imagenes[0]
