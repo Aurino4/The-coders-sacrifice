@@ -8,14 +8,7 @@ cerrar.onclick = function cerrarPopUp() {
 }
 
 console.info("hola")
-var candidatos = [{
-  "name":"",
-  "image":""
-},
-{
-   "name":"",
-   "image":""
-}
+var candidatos = [
 ]
 //let candidatos = []
 let muertos = []
@@ -31,33 +24,50 @@ button1.onclick = function muerte() {
   printing() 
 }
 
-  function candidatosFunction(item, index) {
-  return document.getElementById("coders").innerHTML += item + "<br>"
+  function createList() {
+    let toPrint = ""
+    candidatos.forEach(item => {
+      toPrint += `<li>${item.name}</li>`
+    })
+    return toPrint
+  }
 
-}
+  function createImg(){
+    let toPrint = ""
+    candidatos.forEach((item, i) => {
+      toPrint += `<img id="${item.name + i}" src="${item.image}">`
+    });
+    return toPrint
+  }
 
 function muertosFunction(item, index) {
   document.getElementById("death").innerHTML +=item + "<br>"
 }
 
 function printing() {
-  candidatos.forEach(candidatosFunction)
-  muertos.forEach(muertosFunction)
+  document.getElementById("coders").innerHTML = createList()
+  document.getElementById("members").innerHTML = createImg()
+
+  // document.getElementById("coders").innerHTML += `<li>${item}</li>`
+  // muertos.forEach(muertosFunction)
 }
   button_añadir.onclick = function añadir() {
-  let palabras = document.getElementById('box').value.split(" ");
-  for (var i = 0; i < candidatos.length; i++){
-    candidatos[i]["name"] = palabras;
-    candidatos [i]["image"] =  avatar()
-  } 
-  candidatos = candidatos.concat(palabras);
+  let palabras = document.getElementById('box').value
+  candidatos.push({name:palabras, image:"./images/kyle.png"})
   document.getElementById('box').value = ""; 
-  document.getElementById("coders").innerHTML = candidatos.join("<br>");
-  }
+  // for (var i = 0; i < candidatos.length; i++){
+    printing()
+  //   // candidatos [i]["image"] = avatar()
+  // } 
+  // candidatos = candidatos.concat(palabras);
+
+  // document.getElementById("coders").innerHTML = candidatos.join("<br>");
+
+}
 
 function avatar() {
   let imagenes = ["./images/kyle.png"]
-  document.getElementById("kyle" = imagenes[0])
+  document.getElementById("kyle").src = imagenes[0]
 }
 //  function avatar1() {
 //   let imagenes = ["./images/kyle.png"]
@@ -68,4 +78,4 @@ function avatar() {
 var audio = document.getElementById("audio");
 
 var audio = document.getElementById("audio")
-audio.play();
+// audio.play();

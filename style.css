@@ -58,14 +58,17 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
 #death {
     text-transform: uppercase;
     text-align: center;
 }
+
 #coders {
     text-transform: uppercase;
     text-align: center;
 }
+
 .juego {
     z-index: -1;
     display: flex;
@@ -78,14 +81,17 @@ body {
     width: 100%;
     z-index: -1;
 }
+
 #kyle {
     height: 5vh;
     position: relative;
-    top:5vh;   
+    top: 5vh;
 }
+
 #prueba {
     height: 5vh;
 }
+
 #overlay {
     position: fixed;
     top: 0;
@@ -136,7 +142,7 @@ body {
 video {
     width: 100%;
     position: absolute;
-    z-index: -1;   
+    z-index: -1;
 }
 
 .press {
