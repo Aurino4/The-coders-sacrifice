@@ -7,7 +7,7 @@ cerrar.onclick = function cerrarPopUp() {
   overlay.style.display = "none";
 }
 
-console.info("hola")
+
 var candidatos = [
 ]
 //let candidatos = []
@@ -35,11 +35,11 @@ button1.onclick = function muerte() {
   function createImg(){
     let toPrint = ""
     candidatos.forEach(item => {
-      toPrint += `<img src="${item.image}">`
+      toPrint += `<img id=${"avatares"} src="${item.image}">`
     });
     return toPrint
   }
-console.info("resultado es igual a " + resultado)
+
 function createMuertosList() {
   let toPrint = ""
     muertos.forEach((item) => {
@@ -55,7 +55,7 @@ function printing() {
 }
   button_añadir.onclick = function añadir() {
   let value = document.getElementById('box').value
-  candidatos.push({name:value, image:"./images/kyle.png"})
+  candidatos.push({name:value, image:avatarSelection()})
   document.getElementById('box').value = ""; 
   // for (var i = 0; i < candidatos.length; i++){
     printing()
@@ -67,10 +67,10 @@ function printing() {
 
 }
 
-function avatar() {
-  let imagenes = ["./images/kyle.png"]
-  document.getElementById("kyle").src = imagenes[0]
-}
+// function avatar() {
+//   let imagenes = ["./images/kyle.png"]
+//   document.getElementById("kyle").src = imagenes[0]
+// }
 //  function avatar1() {
 //   let imagenes = ["./images/kyle.png"]
 //   document.getElementById("prueba").src = imagenes[0]
@@ -81,3 +81,13 @@ function avatar() {
 
 // var audio = document.getElementById("audio")
 // // audio.play();
+
+var imgArray = ['./images/cartman.png','./images/cheff.png','./images/clyde.png','./images/jimbo.png',
+'./images/jimmy.png','./images/Kenny.png','./images/Stan_HanSolo.png','./images/kyle.png','./images/KyleBrother.png','./images/niña_rubia.png',
+'./images/niñaConFlor.png','./images/NiñaRosa.png','./images/pip.png','./images/Randy_eggs.png','./images/Randy.png','./images/Señor_Mackey.png',
+'./images/Sheila.png','./images/Stan.png','./images/timmy.png','./images/Token.png','./images/tweek.png','./images/vaca.png','./images/wendy.png']
+
+function avatarSelection() {
+  let avatar_selection = imgArray.splice(getRandomInt(imgArray.length), 1)
+  return avatar_selection
+}

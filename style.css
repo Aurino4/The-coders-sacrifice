@@ -69,7 +69,6 @@ body {
 .juego {
     z-index: -1;
     display: flex;
-    justify-content: center;
     transform: translateY(-37.8vw);
     height: 34.2%;
 }
@@ -77,6 +76,13 @@ body {
 .juego img:nth-child(1) {
     height: 100%;
     z-index: -1;
+}
+.members_avatar {
+position: absolute;
+top:78%;
+}
+#avatares {
+    height: 10vh;
 }
 
 /* List coders
@@ -187,7 +193,7 @@ ul {
     font-family:'3 theHard';
 }
  
-.copy {
+/* .copy {
     bottom: 0;
     display: flex;
     align-items: center;
@@ -196,7 +202,7 @@ ul {
     height: 3vw;
     padding-left: 12vh;
 
-}
+} */
 
 video {
     width: 100%;
