@@ -126,6 +126,7 @@ body {
     text-decoration: none;
     color: #F00;
     transition: all 200ms;
+    cursor: pointer;
 }
 
 .copy {

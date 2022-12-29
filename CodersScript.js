@@ -8,17 +8,11 @@ cerrar.onclick = function cerrarPopUp() {
 }
 
 
-var candidatos = [{
-  "name":"",
-  "image":""
-},
-{
-   "name":"",
-   "image":""
-}
-]
+var candidatos = []
 //let candidatos = []
 let muertos = []
+
+
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -47,18 +41,21 @@ function printing() {
   button_añadir.onclick = function añadir() {
   let palabras = document.getElementById('box').value.split(" ");
   for (var i = 0; i < candidatos.length; i++){
+    if (i=0){candidatos.push({name:palabras, image:"./images/kyle.png"})
+  }else{
     candidatos[i]["name"] = palabras;
-    candidatos [i]["image"] =  avatar()
+    //candidatos [i]["image"] =  avatar()
+  }
   } 
   candidatos = candidatos.concat(palabras);
   document.getElementById('box').value = ""; 
   document.getElementById("coders").innerHTML = candidatos.join("<br>");
   }
-
-function avatar() {
-  let imagenes = ["./images/kyle.png"]
-  document.getElementById("kyle").src = imagenes[0]
-}
+    	                                
+// function avatar() {
+//   let imagenes = ["./images/kyle.png"]
+//   document.getElementById("kyle").src = imagenes[0]
+// }
 //  function avatar1() {
 //   let imagenes = ["./images/kyle.png"]
 //   document.getElementById("prueba").src = imagenes[0]
