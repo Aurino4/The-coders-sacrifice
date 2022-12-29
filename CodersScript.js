@@ -7,8 +7,16 @@ cerrar.onclick = function cerrarPopUp() {
   overlay.style.display = "none";
 }
 
-
-var candidatos = []
+console.info("hola")
+var candidatos = [{
+  "name":"",
+  "image":""
+},
+{
+   "name":"",
+   "image":""
+}
+]
 //let candidatos = []
 let muertos = []
 
@@ -19,42 +27,54 @@ function getRandomInt(max) {
 }
 button1.onclick = function muerte() {
   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
-  muertos.push(muerto)
-  document.getElementById("coders").innerHTML = "";
-  document.getElementById("death").innerHTML = "";
+  muertos.push(muerto[0].name)
   printing() 
 }
 
-  function candidatosFunction(item, index) {
-  return document.getElementById("coders").innerHTML += item + "<br>"
+  function createCandidatosList() {
+    let toPrint = ""
+    candidatos.forEach(item => {
+      toPrint += `<li>${item.name}</li>`
+    })
+    return toPrint
+  }
 
-}
-
-function muertosFunction(item, index) {
-  document.getElementById("death").innerHTML +=item + "<br>"
+  function createImg(){
+    let toPrint = ""
+    candidatos.forEach(item => {
+      toPrint += `<img src="${item.image}">`
+    });
+    return toPrint
+  }
+console.info("resultado es igual a " + resultado)
+function createMuertosList() {
+  let toPrint = ""
+    muertos.forEach((item, i) => {
+      toPrint += `<li>${item}</li>`
+    });
+    return toPrint
 }
 
 function printing() {
-  candidatos.forEach(candidatosFunction)
-  muertos.forEach(muertosFunction)
+  document.getElementById("coders").innerHTML = createCandidatosList()
+  document.getElementById("members").innerHTML = createImg()
+  document.getElementById("death").innerHTML = createMuertosList()
 }
   button_añadir.onclick = function añadir() {
   let palabras = document.getElementById('box').value.split(" ");
   for (var i = 0; i < candidatos.length; i++){
     candidatos[i]["name"] = palabras;
-    //candidatos [i]["image"] =  avatar()
-  }
+    candidatos [i]["image"] =  avatar()
+  } 
   candidatos = candidatos.concat(palabras);
   document.getElementById('box').value = ""; 
   document.getElementById("coders").innerHTML = candidatos.join("<br>");
+  }
 
-} 
-  //candidatos.push({name:palabras, image:"./images/kyle.png"})---- este es el objeto
-                                
-// function avatar() {
-//   let imagenes = ["./images/kyle.png"]
-//   document.getElementById("kyle").src = imagenes[0]
-// }
+function avatar() {
+  let imagenes = ["./images/kyle.png"]
+  document.getElementById("kyle" = imagenes[0])
+}
 //  function avatar1() {
 //   let imagenes = ["./images/kyle.png"]
 //   document.getElementById("prueba").src = imagenes[0]
@@ -64,4 +84,4 @@ function printing() {
 var audio = document.getElementById("audio");
 
 var audio = document.getElementById("audio")
-audio.play();
+// audio.play();

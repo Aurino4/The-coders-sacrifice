@@ -3,86 +3,157 @@
     padding: 0px;
 }
 
+@font-face {
+    font-family: '3 theHard';
+    src: url(/fonts/3\ theHard\ way\ RMX.ttf);
+}
 
 
 body {
-    border: #F00 solid 1px;
-    background-image: url(/images/Background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
 }
+
+/********************************
+***           MAIN            ***
+********************************/
+
 
 .main {
     display: flex;
-    height: 100%;
+    justify-content: space-around;
+    font-family: '3 theHard';
 }
 
-.coders {
-    border: #F00 solid 1px;
-    margin: 4%;
-    color: #FFF;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+/* Background
+========================================================= */
+.background {
+    position: fixed;
+    z-index: -100;
 }
+
+.background img:nth-child(1){
+    height: 69vw;
+}
+
+
+/* Machine Space
+========================================================= */
 
 .machine {
-    border: #F00 solid 1px;
-    background-image: url(/images/maquina-cortada.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 68.4vw;
+    height: 68vw;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .machinePhoto {
-    border: #F00 solid 1px;
     height: 100%;
 }
 
 .machinePhoto img:nth-child(1) {
-    width: 90%;
+    height: 100%;
 }
 
-.death {
-    border: #F00 solid 1px;
-    margin: 4%;
-    width: 20%;
-    color: #FFF;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
 #death {
     text-transform: uppercase;
     text-align: center;
 }
+
 #coders {
     text-transform: uppercase;
     text-align: center;
 }
+
 .juego {
     z-index: -1;
     display: flex;
     justify-content: center;
-    transform: translateY(20.2vw);
-    width: 55.1%;
+    transform: translateY(-37.8vw);
+    height: 34.2%;
 }
 
 .juego img:nth-child(1) {
-    width: 100%;
+    height: 100%;
     z-index: -1;
 }
+
+/* List coders
+========================================================= */
+
+.coders {
+    margin-left: 5%;
+    margin-top: 20%;
+    width: 20%;
+    height: auto;
+    color: rgb(142, 142, 142);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 3vw;
+    
+}
+
+/* List death
+========================================================= */
+
+.death {
+    margin-top: 20%;
+    margin-right: 5%;
+    width: 20%;
+    height: auto;
+    color: #841010;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 3vw;
+}
+
+h2 {
+    color: rgb(0, 0, 0) ;
+    text-shadow: 1px 1px 2px #841010, 0 0 1em rgb(234, 234, 255), 0 0 0.2em rgb(177, 177, 177);
+    margin-bottom: 10%;
+    font-size: 2vw;
+}
+
+ul {
+    font-size: 1vw;
+    list-style: none;
+}
+
+/* Buttons
+========================================================= */
+
+.buttons {
+    transform: translateY(-32vw);
+    width: 10vh;
+    height: 6vw;
+}
+
+.buttonRed {
+    width: 10vh;
+    height: 7vw;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/********************************
+***           POPUP           ***
+********************************/
+
 #kyle {
     height: 5vh;
     position: relative;
-    top:5vh;   
+    top: 5vh;
 }
+
 #prueba {
     height: 5vh;
 }
@@ -135,8 +206,7 @@ body {
     align-items: center;
     color: white;
     background: linear-gradient(45deg, black, grey, rgb(255, 70, 42));
-    width: 100%;
-    height: 5%;
+    height: 3vw;
     padding-left: 12vh;
 
 }
@@ -144,28 +214,16 @@ body {
 video {
     width: 100%;
     position: absolute;
-    z-index: -1;   
+    z-index: -1;
 }
 
 .press {
     position: fixed;
     margin-top: 80vh;
-    height: 10vh;
+    height: 1vh;
     width: 15vw;
     color: #F00;
     background-color: black;
     cursor: pointer;
 }
 
-.buttons {
-    transform: translateY(24.4vw);
-    width: 9vh;
-    box-sizing: content-box;
-}
-
-.buttonRed {
-    width: 100%;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
