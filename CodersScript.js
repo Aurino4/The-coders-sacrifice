@@ -1,4 +1,4 @@
-
+console.info("hola")
 
 let overlay = document.getElementById("overlay")
 let cerrar = document.getElementById("cerrar")
@@ -7,7 +7,7 @@ cerrar.onclick = function cerrarPopUp() {
   overlay.style.display = "none";
 }
 
-console.info("hola")
+
 var candidatos = [{
   "name":"",
   "image":""
@@ -57,7 +57,7 @@ function printing() {
 
 function avatar() {
   let imagenes = ["./images/kyle.png"]
-  document.getElementById("kyle" = imagenes[0])
+  document.getElementById("kyle").src = imagenes[0]
 }
 //  function avatar1() {
 //   let imagenes = ["./images/kyle.png"]
