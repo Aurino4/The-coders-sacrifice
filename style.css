@@ -84,7 +84,7 @@ body {
 position: fixed;
 transform: translateY(0vh)
 }
-#avatares {
+.avatares {
     height: 8vw;
 }
 
@@ -103,7 +103,6 @@ transform: translateY(0vh)
     text-align: center;
     text-transform: uppercase;
     line-height: 3vw;
-    
 }
 
 /* List death
