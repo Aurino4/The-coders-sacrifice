@@ -60,8 +60,9 @@ body {
 
 .juego {
     z-index: -1;
-    transform: translateY(-56vh);
-    height: 39%;
+    transform: translateY(-55.5vh);
+    height: 38.5%;
+    width: 62%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,11 +72,17 @@ body {
     height: 100%;
     z-index: -1;
 }
+
 .members_avatar {
 position: fixed;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
 }
-#avatares {
-    height: 8vw;
+
+.avatares {
+    height: 8vh;
 }
 
 /* List coders
@@ -93,7 +100,6 @@ position: fixed;
     text-align: center;
     text-transform: uppercase;
     line-height: 4vh;
-    
 }
 
 /* List death
@@ -180,10 +186,11 @@ ul {
     color: #F00;
     transition: all 200ms;
 }
+
 .playWith{
     font-family:'3 theHard';
 }
- 
+
 .copy {
     bottom: 0;
     display: flex;
@@ -194,6 +201,10 @@ ul {
     padding-left: 12vh;
 
 }
+
+/********************************
+***           VIDEO           ***
+********************************/
 
 video {
     width: 100%;

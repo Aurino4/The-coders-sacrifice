@@ -55,7 +55,6 @@ button_añadir.onclick = function añadir() {
   let value = document.getElementById('box').value
   candidatos.push({name:value, image:avatarSelection()})
   document.getElementById('box').value = ""; 
-<<<<<<< HEAD
   // for (var i = 0; i < candidatos.length; i++){
     printing()
   //   // candidatos [i]["image"] = avatar()
@@ -67,9 +66,7 @@ button_añadir.onclick = function añadir() {
 function avatar() {
   let imagenes = ["./images/kyle.png"]
   document.getElementById("kyle") = imagenes[0]
-=======
   printing()
->>>>>>> 5b520acd3da033adac2ecead3a34fddc3d5faf97
 }
 
 
