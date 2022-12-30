@@ -37,7 +37,7 @@ function createList(type) {
       return toPrint
     case 'IMG':
       candidatos.forEach((item, i) => {
-        toPrint += `<img id="avatares" src="${item.image}">`
+        toPrint += `<div class="avatares"><img src="${item.image}"></div>`
       });
       return toPrint
     default:
