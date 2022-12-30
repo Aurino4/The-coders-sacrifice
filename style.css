@@ -12,6 +12,7 @@
 body {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 /********************************
@@ -33,7 +34,8 @@ body {
 }
 
 .background img:nth-child(1){
-    height: 69vw;
+    height: 100vh;
+    width: 100vw;
 }
 
 
@@ -41,7 +43,7 @@ body {
 ========================================================= */
 
 .machine {
-    height: 68vw;
+    height: 100vh;
     width: auto;
     display: flex;
     flex-direction: column;
@@ -56,24 +58,13 @@ body {
     height: 100%;
 }
 
-#death {
-    text-transform: uppercase;
-    text-align: center;
-}
-
-#coders-list {
-    text-transform: uppercase;
-    text-align: center;
-}
-
 .juego {
     z-index: -1;
+    transform: translateY(-56vh);
+    height: 39%;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(-37.8vw);
-    height: 39.0%;
-    width: 62%;
 }
 
 .juego img:first-child {
@@ -82,7 +73,6 @@ body {
 }
 .members_avatar {
 position: fixed;
-transform: translateY(0vh)
 }
 .avatares {
     height: 8vw;
@@ -92,8 +82,8 @@ transform: translateY(0vh)
 ========================================================= */
 
 .coders {
-    margin-left: 5%;
-    margin-top: 20%;
+    margin-left: 5vw;
+    margin-top: 15%;
     width: 20%;
     height: auto;
     color: rgb(142, 142, 142);
@@ -102,15 +92,16 @@ transform: translateY(0vh)
     flex-direction: column;
     text-align: center;
     text-transform: uppercase;
-    line-height: 3vw;
+    line-height: 4vh;
+    
 }
 
 /* List death
 ========================================================= */
 
 .death {
-    margin-top: 20%;
-    margin-right: 5%;
+    margin-top: 15%;
+    margin-right: 5vw;
     width: 20%;
     height: auto;
     color: #841010;
@@ -119,18 +110,18 @@ transform: translateY(0vh)
     flex-direction: column;
     text-align: center;
     text-transform: uppercase;
-    line-height: 3vw;
+    line-height: 4vh;
 }
 
 h2 {
     color: rgb(0, 0, 0) ;
     text-shadow: 1px 1px 2px #841010, 0 0 1em rgb(234, 234, 255), 0 0 0.2em rgb(177, 177, 177);
     margin-bottom: 10%;
-    font-size: 2vw;
+    font-size: 3vh;
 }
 
 ul {
-    font-size: 1vw;
+    font-size: 2vh;
     list-style: none;
 }
 
@@ -138,12 +129,12 @@ ul {
 ========================================================= */
 
 .buttons {
-    transform: translateY(-36vw); 
-    height: 6vw;
+    transform: translateY(-52vh);
+    width: 12%;
 }
 
 .buttonRed {
-    width: 6vw;
+    width: 100%;
     background: none;
     border: none;
     cursor: pointer;
@@ -155,6 +146,7 @@ ul {
 ********************************/
 
 #overlay {
+    z-index: 1;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -187,7 +179,6 @@ ul {
     text-decoration: none;
     color: #F00;
     transition: all 200ms;
-    cursor: pointer;
 }
 .playWith{
     font-family:'3 theHard';
@@ -202,12 +193,12 @@ ul {
     height: 3vw;
     padding-left: 12vh;
 
-} 
+}
 
 video {
     width: 100%;
     position: absolute;
-    z-index: -1;
+    z-index: -1;   
 }
 
 .press {
