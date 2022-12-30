@@ -8,8 +8,7 @@ cerrar.onclick = function cerrarPopUp() {
 }
 
 console.info("hola")
-var candidatos = [
-]
+var candidatos = []
 //let candidatos = []
 let muertos = []
 
@@ -22,57 +21,75 @@ button1.onclick = function muerte() {
   printing() 
 }
 
-  function createCandidatosList() {
-    let toPrint = ""
-    candidatos.forEach(item => {
-      toPrint += `<li>${item.name}</li>`
-    })
-    return toPrint
-  }
+// function createCandidatosList() {
+//   let toPrint = ""
+//   candidatos.forEach(item => {
+//     toPrint += `<li>${item.name}</li>`
+//   })
+//   return toPrint
+// }
 
-  function createImg(){
-    let toPrint = ""
-    candidatos.forEach(item => {
-      toPrint += `<img src="${item.image}">`
-    });
-    return toPrint
-  }
-console.info("resultado es igual a " + resultado)
-function createMuertosList() {
+// function createImg(){
+//   let toPrint = ""
+//   candidatos.forEach(item => {
+//     toPrint += `<img src="${item.image}">`
+//   });
+//   return toPrint
+// }
+// function createMuertosList() {
+//   let toPrint = ""
+//     muertos.forEach((item, i) => {
+//       toPrint += `<li>${item}</li>`
+//     });
+//     return toPrint
+// }
+
+function createList(type) {
   let toPrint = ""
-    muertos.forEach((item, i) => {
-      toPrint += `<li>${item}</li>`
-    });
-    return toPrint
+  switch (type) {
+    case 'CANDIDATOS':
+      candidatos.forEach(item => {
+        toPrint += `<li>${item.name}</li>`
+      })
+      return toPrint
+    case 'MUERTOS':
+      muertos.forEach((item, i) => {
+        toPrint += `<li>${item}</li>`
+      });
+      return toPrint
+    case 'IMG':
+      candidatos.forEach(item => {
+        toPrint += `<img src="${item.image}">`
+      });
+      return toPrint
+    default:
+      return "Na'";
+  }
 }
 
 function printing() {
-  document.getElementById("coders").innerHTML = createCandidatosList()
-  document.getElementById("members").innerHTML = createImg()
-  document.getElementById("death").innerHTML = createMuertosList()
+  document.getElementById("coders").innerHTML = createList('CANDIDATOS')
+  document.getElementById("members").innerHTML = createList('IMG')
+  document.getElementById("death").innerHTML = createList('MUERTOS')
 }
-  button_añadir.onclick = function añadir() {
+
+button_añadir.onclick = function añadir() {
   let value = document.getElementById('box').value
-  candidatos.push({name:value, image:"./images/kyle.png"})
+  candidatos.push({name:value, image:randomAvatar()})
   document.getElementById('box').value = ""; 
-  // for (var i = 0; i < candidatos.length; i++){
-    printing()
-  //   // candidatos [i]["image"] = avatar()
-  // } 
-  // candidatos = candidatos.concat(palabras);
-
-  // document.getElementById("coders").innerHTML = candidatos.join("<br>");
-
+  printing()
 }
 
-function avatar() {
+function randomAvatar() {
   let imagenes = ["./images/kyle.png"]
-  document.getElementById("kyle").src = imagenes[0]
+  return imagenes[getRandomInt(imagenes.length)]
 }
 //  function avatar1() {
 //   let imagenes = ["./images/kyle.png"]
 //   document.getElementById("prueba").src = imagenes[0]
 // }
+
+
 
 
 var audio = document.getElementById("audio");
