@@ -82,10 +82,14 @@ body {
 }
 .members_avatar {
 position: fixed;
+display: flex;
 transform: translateY(0vh)
 }
-#avatares {
-    height: 10vh;
+.avatares {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vw;
 }
 
 /* List coders

@@ -35,7 +35,7 @@ button1.onclick = function muerte() {
   function createImg(){
     let toPrint = ""
     candidatos.forEach(item => {
-      toPrint += `<img id= "avatares" src="${item.image}">`
+      toPrint += `<div class="avatares"><img  src="${item.image}"></div>`
     });
     return toPrint
   }
@@ -57,24 +57,12 @@ function printing() {
   let value = document.getElementById('box').value
   candidatos.push({name:value, image:avatarSelection()})
   document.getElementById('box').value = ""; 
-  // for (var i = 0; i < candidatos.length; i++){
+ 
     printing()
-  //   // candidatos [i]["image"] = avatar()
-  // } 
-  // candidatos = candidatos.concat(palabras);
 
-  // document.getElementById("coders").innerHTML = candidatos.join("<br>");
 
 }
 
-// function avatar() {
-//   let imagenes = ["./images/kyle.png"]
-//   document.getElementById("kyle").src = imagenes[0]
-// }
-//  function avatar1() {
-//   let imagenes = ["./images/kyle.png"]
-//   document.getElementById("prueba").src = imagenes[0]
-// }
 
 
 
