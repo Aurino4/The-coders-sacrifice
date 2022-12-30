@@ -1,4 +1,4 @@
-
+console.info("hola")
 
 let overlay = document.getElementById("overlay")
 let cerrar = document.getElementById("cerrar")
@@ -7,10 +7,11 @@ cerrar.onclick = function cerrarPopUp() {
   overlay.style.display = "none";
 }
 
-console.info("hola")
 var candidatos = []
 //let candidatos = []
 let muertos = []
+
+
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -21,29 +22,6 @@ button1.onclick = function muerte() {
   printing() 
 }
 
-// function createCandidatosList() {
-//   let toPrint = ""
-//   candidatos.forEach(item => {
-//     toPrint += `<li>${item.name}</li>`
-//   })
-//   return toPrint
-// }
-
-// function createImg(){
-//   let toPrint = ""
-//   candidatos.forEach(item => {
-//     toPrint += `<img src="${item.image}">`
-//   });
-//   return toPrint
-// }
-// function createMuertosList() {
-//   let toPrint = ""
-//     muertos.forEach((item, i) => {
-//       toPrint += `<li>${item}</li>`
-//     });
-//     return toPrint
-// }
-
 function createList(type) {
   let toPrint = ""
   switch (type) {
@@ -53,13 +31,13 @@ function createList(type) {
       })
       return toPrint
     case 'MUERTOS':
-      muertos.forEach((item, i) => {
+      muertos.forEach(item => {
         toPrint += `<li>${item}</li>`
       });
       return toPrint
     case 'IMG':
-      candidatos.forEach(item => {
-        toPrint += `<img src="${item.image}">`
+      candidatos.forEach((item, i) => {
+        toPrint += `<img id="avatares" src="${item.image}">`
       });
       return toPrint
     default:
@@ -68,31 +46,32 @@ function createList(type) {
 }
 
 function printing() {
-  document.getElementById("coders").innerHTML = createList('CANDIDATOS')
+  document.getElementById("coders-list").innerHTML = createList('CANDIDATOS')
   document.getElementById("members").innerHTML = createList('IMG')
   document.getElementById("death").innerHTML = createList('MUERTOS')
 }
 
 button_añadir.onclick = function añadir() {
   let value = document.getElementById('box').value
-  candidatos.push({name:value, image:randomAvatar()})
+  candidatos.push({name:value, image:avatarSelection()})
   document.getElementById('box').value = ""; 
   printing()
 }
 
-function randomAvatar() {
-  let imagenes = ["./images/kyle.png"]
-  return imagenes[getRandomInt(imagenes.length)]
+
+
+
+
+
+// var audio = document.getElementById("audio")
+// // audio.play();
+
+
+
+function avatarSelection() {
+  var imgArray = ['./images/cartman.png','./images/cheff.png','./images/clyde.png','./images/jimbo.png',
+  './images/jimmy.png','./images/Kenny.png','./images/Stan_HanSolo.png','./images/kyle.png','./images/KyleBrother.png','./images/niña_rubia.png',
+  './images/niñaConFlor.png','./images/NiñaRosa.png','./images/pip.png','./images/Randy_eggs.png','./images/Randy.png','./images/Señor_Mackey.png',
+  './images/Sheila.png','./images/Stan.png','./images/timmy.png','./images/Token.png','./images/tweek.png','./images/vaca.png','./images/wendy.png']
+  return imgArray[getRandomInt(imgArray.length)]
 }
-//  function avatar1() {
-//   let imagenes = ["./images/kyle.png"]
-//   document.getElementById("prueba").src = imagenes[0]
-// }
-
-
-
-
-var audio = document.getElementById("audio");
-
-var audio = document.getElementById("audio")
-// audio.play();
