@@ -62,11 +62,20 @@ body {
     z-index: -1;
     transform: translateY(-56vh);
     height: 39%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.juego img:nth-child(1) {
+.juego img:first-child {
     height: 100%;
     z-index: -1;
+}
+.members_avatar {
+position: fixed;
+}
+#avatares {
+    height: 10vh;
 }
 
 /* List coders
@@ -171,7 +180,10 @@ ul {
     color: #F00;
     transition: all 200ms;
 }
-
+.playWith{
+    font-family:'3 theHard';
+}
+ 
 .copy {
     bottom: 0;
     display: flex;

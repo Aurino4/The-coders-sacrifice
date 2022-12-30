@@ -35,7 +35,7 @@ button1.onclick = function muerte() {
   function createImg(){
     let toPrint = ""
     candidatos.forEach(item => {
-      toPrint += `<img id=${"avatares"} src="${item.image}">`
+      toPrint += `<img id= "avatares" src="${item.image}">`
     });
     return toPrint
   }
@@ -49,7 +49,7 @@ function createMuertosList() {
 }
 
 function printing() {
-  document.getElementById("coderses").innerHTML = createCandidatosList()
+  document.getElementById("coders").innerHTML = createCandidatosList()
   document.getElementById("members").innerHTML = createImg()
   document.getElementById("death").innerHTML = createMuertosList()
 }
