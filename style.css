@@ -69,17 +69,20 @@ body {
 .juego {
     z-index: -1;
     display: flex;
+    justify-content: center;
+    align-items: center;
     transform: translateY(-37.8vw);
-    height: 34.2%;
+    height: 39.0%;
+    width: 62%;
 }
 
-.juego img:nth-child(1) {
+.juego img:first-child {
     height: 100%;
     z-index: -1;
 }
 .members_avatar {
-position: absolute;
-top:78%;
+position: fixed;
+transform: translateY(0vh)
 }
 #avatares {
     height: 10vh;
@@ -136,14 +139,12 @@ ul {
 ========================================================= */
 
 .buttons {
-    transform: translateY(-32vw);
-    width: 10vh;
+    transform: translateY(-36vw); 
     height: 6vw;
 }
 
 .buttonRed {
-    width: 10vh;
-    height: 7vw;
+    width: 6vw;
     background: none;
     border: none;
     cursor: pointer;
@@ -193,7 +194,7 @@ ul {
     font-family:'3 theHard';
 }
  
-/* .copy {
+.copy {
     bottom: 0;
     display: flex;
     align-items: center;
@@ -202,7 +203,7 @@ ul {
     height: 3vw;
     padding-left: 12vh;
 
-} */
+} 
 
 video {
     width: 100%;
