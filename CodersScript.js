@@ -59,15 +59,6 @@ button_añadir.onclick = function añadir() {
 }
 
 
-
-
-
-
-// var audio = document.getElementById("audio")
-// // audio.play();
-
-
-
 function avatarSelection() {
   var imgArray = ['./images/cartman.png','./images/cheff.png','./images/clyde.png','./images/jimbo.png',
   './images/jimmy.png','./images/Kenny.png','./images/Stan_HanSolo.png','./images/kyle.png','./images/KyleBrother.png','./images/niña_rubia.png',
