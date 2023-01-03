@@ -67,12 +67,14 @@ function playSound(type) {
   }
 }
 
-button_añadir.onclick = function añadir() {
+function añadir() {
   let value = document.getElementById('box').value
   candidatos.push({name:value, image:avatarSelection()})
   document.getElementById('box').value = ""; 
   printing()
 }
+
+button_añadir.onclick = añadir()
 
 
 function avatarSelection() {
