@@ -2,6 +2,8 @@ console.info("hola")
 
 let overlay = document.getElementById("overlay")
 let cerrar = document.getElementById("cerrar")
+let buttonRed = document.querySelector(".buttonRed")
+let button_añadir = document.querySelector("#button_añadir")
 
 cerrar.onclick = function cerrarPopUp() {
   overlay.style.display = "none";
@@ -16,12 +18,14 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-button1.onclick = function muerte() {
+function muerte() {
   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
   muertos.push(muerto[0].name)
+  document.querySelector(".printMuerto").innerHTML = "Has matado a " + muerto[0].name
   printing() 
   playSound('SHOT')
 }
+
 
 function createList(type) {
   let toPrint = ""
@@ -54,13 +58,14 @@ function printing() {
 
 function playSound(type) {
   let audioShot = new Audio('./Audio/disparo.mp3');
+  const audioReload = new Audio('./Audio/recargar.mp3');
 
   switch (type) {
     case 'SHOT':
       audioShot.play()
       break;
     case 'RELOAD':
-
+      audioReload.play()
       break;
     default:
       break;
@@ -74,8 +79,8 @@ function añadir() {
   printing()
 }
 
-button_añadir.onclick = añadir()
-
+buttonRed.addEventListener("click", muerte)
+button_añadir.addEventListener("click", añadir)
 
 function avatarSelection() {
   var imgArray = ['./images/cartman.png','./images/cheff.png','./images/clyde.png','./images/jimbo.png',
@@ -84,3 +89,4 @@ function avatarSelection() {
   './images/Sheila.png','./images/Stan.png','./images/timmy.png','./images/Token.png','./images/tweek.png','./images/vaca.png','./images/wendy.png']
   return imgArray[getRandomInt(imgArray.length)]
 }
+
