@@ -108,11 +108,39 @@ function enter(e){
   }
 }
 
+function changeToPress(color){
+  let buttonRedPress = document.querySelector(".buttonRedPress")
+  let buttonWhitePress = document.querySelector(".buttonWhitePress")
+  switch (color) {
+    case 'RED':
+      buttonRed.style.display = "none"
+      buttonRedPress.style.display = "block"
+      setTimeout(() => {
+        buttonRed.style.display = "block"
+        buttonRedPress.style.display = "none"
+      }, 200)
+      break;
+    case 'WHITE':
+      buttonWhite.style.display = "none"
+      buttonWhitePress.style.display = "block"
+      setTimeout(() => {
+        buttonWhite.style.display = "block"
+        buttonWhitePress.style.display = "none"
+      }, 200)
+    break
+    default:
+      break;
+  }
+}
+
+
+
 buttonRed.addEventListener("click", muerte)
 buttonWhite.addEventListener("click", reload)
 button_añadir.addEventListener("click", añadir)
 inputCandidatos.addEventListener("keypress", (e) => {enter(e)})
-
+buttonRed.addEventListener("click", () => {changeToPress('RED')})
+buttonWhite.addEventListener("click", () => {changeToPress('WHITE')})
 
 function avatarSelection() {
   var imgArray = ['./images/cartman.png','./images/cheff.png','./images/clyde.png','./images/jimbo.png',
