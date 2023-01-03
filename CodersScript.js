@@ -16,10 +16,12 @@ let muertos = []
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
+
 button1.onclick = function muerte() {
   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
   muertos.push(muerto[0].name)
   printing() 
+  playSound('SHOT')
 }
 
 function createList(type) {
@@ -37,7 +39,7 @@ function createList(type) {
       return toPrint
     case 'IMG':
       candidatos.forEach((item, i) => {
-        toPrint += `<div class="avatares"><img src="${item.image}"></div>`
+        toPrint += `<div class="avatares"><img src="${item.image}"><p>${item.name}</p></div>`
       });
       return toPrint
     default:
@@ -49,6 +51,20 @@ function printing() {
   document.getElementById("coders-list").innerHTML = createList('CANDIDATOS')
   document.getElementById("members").innerHTML = createList('IMG')
   document.getElementById("death").innerHTML = createList('MUERTOS')
+}
+
+function playSound(type) {
+  let audioShot = new Audio('./Audio/.mp3');
+
+  switch (type) {
+    case 'SHOT':
+      audioShot.play()
+      break;
+    case 'RELOAD':
+      break;
+    default:
+      break;
+  }
 }
 
 button_añadir.onclick = function añadir() {
