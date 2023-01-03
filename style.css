@@ -31,6 +31,7 @@ body {
 .background {
     position: fixed;
     z-index: -100;
+    
 }
 
 .background img:nth-child(1) {
@@ -231,6 +232,14 @@ ul {
     align-items: center;
 }
 
+#box {
+    align-items: center;
+    text-align: center;
+    padding: 1.6vh 1.6vh 1.6vh;
+    margin-bottom: 4.8vh;
+}
+
+
 #cerrar {
     position: absolute;
     top: 20px;
@@ -267,6 +276,7 @@ ul {
 
 .video {
     width: 100%;
+    z-index: -1;
 }
 
 .press {
@@ -286,3 +296,8 @@ ul {
     justify-content: center;
 }
 
+.press a {
+    color:#841010;
+    text-decoration: none;
+
+}
