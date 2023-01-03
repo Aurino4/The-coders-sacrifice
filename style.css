@@ -76,9 +76,9 @@ body {
 .members_avatar {
 position: fixed;
 display: flex;
-align-content: center;
-height: 40vh;
-transform: translateY(0vh)
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
 
 }
 
