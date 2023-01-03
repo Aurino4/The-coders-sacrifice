@@ -2,6 +2,8 @@ console.info("hola")
 
 let overlay = document.getElementById("overlay")
 let cerrar = document.getElementById("cerrar")
+let buttonRed = document.querySelector(".buttonRed")
+let button_añadir = document.querySelector("#button_añadir")
 
 cerrar.onclick = function cerrarPopUp() {
   overlay.style.display = "none";
@@ -15,12 +17,15 @@ let muertos = []
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
-button1.onclick = function muerte() {
+
+function muerte() {
   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
   muertos.push(muerto[0].name)
   document.querySelector(".printMuerto").innerHTML = "Has matado a " + muerto.pop
   printing() 
+  playSound('SHOT')
 }
+
 
 function createList(type) {
   let toPrint = ""
@@ -37,7 +42,7 @@ function createList(type) {
       return toPrint
     case 'IMG':
       candidatos.forEach((item, i) => {
-        toPrint += `<div class="avatares"><img src="${item.image}"></div>`
+        toPrint += `<div class="avatares"><img src="${item.image}"><p>${item.name}</p></div>`
       });
       return toPrint
     default:
@@ -52,24 +57,31 @@ function printing() {
   document.querySelector(".printMuerto").innerHTML = "Has matado a " + muerto.pop
 }
 
-button_añadir.onclick = function añadir() {
+function playSound(type) {
+  let audioShot = new Audio('./Audio/disparo.mp3');
+  const audioReload = new Audio('./Audio/recargar.mp3');
+
+  switch (type) {
+    case 'SHOT':
+      audioShot.play()
+      break;
+    case 'RELOAD':
+      audioReload.play()
+      break;
+    default:
+      break;
+  }
+}
+
+function añadir() {
   let value = document.getElementById('box').value
   candidatos.push({name:value, image:avatarSelection()})
   document.getElementById('box').value = ""; 
-  // for (var i = 0; i < candidatos.length; i++){
-    printing()
-  //   // candidatos [i]["image"] = avatar()
-  // } 
-  // candidatos = candidatos.concat(palabras);
-
-  // document.getElementById("coders").innerHTML = candidatos.join("<br>");
-  }
-function avatar() {
-  let imagenes = ["./images/kyle.png"]
-  document.getElementById("kyle") = imagenes[0]
   printing()
 }
 
+buttonRed.addEventListener("click", muerte)
+button_añadir.addEventListener("click", añadir)
 
 function avatarSelection() {
   var imgArray = ['./images/cartman.png','./images/cheff.png','./images/clyde.png','./images/jimbo.png',
