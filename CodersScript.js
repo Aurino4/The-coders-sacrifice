@@ -21,7 +21,7 @@ function getRandomInt(max) {
 function muerte() {
   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
   muertos.push(muerto[0].name)
-  document.querySelector(".printMuerto").innerHTML = "Has matado a " + muerto.pop
+  document.querySelector(".printMuerto").innerHTML = "Has matado a " + muerto[0].name
   printing() 
   playSound('SHOT')
 }
@@ -54,7 +54,6 @@ function printing() {
   document.getElementById("coders-list").innerHTML = createList('CANDIDATOS')
   document.getElementById("members").innerHTML = createList('IMG')
   document.getElementById("death").innerHTML = createList('MUERTOS')
-  document.querySelector(".printMuerto").innerHTML = "Has matado a " + muerto.pop
 }
 
 function playSound(type) {
