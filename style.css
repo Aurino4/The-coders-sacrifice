@@ -3,62 +3,157 @@
     padding: 0px;
 }
 
+@font-face {
+    font-family: '3 theHard';
+    src: url(/fonts/3\ theHard\ way\ RMX.ttf);
+}
+
+
 body {
-    background-image: url(/images/Background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
+
+/********************************
+***           MAIN            ***
+********************************/
+
 
 .main {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    font-family: '3 theHard';
 }
 
-.coders {
-    border: #F00 solid 1px;
-    margin: 4%;
-    width: 20%;
-    color: #FFF;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+/* Background
+========================================================= */
+.background {
+    position: fixed;
+    z-index: -100;
 }
+
+.background img:nth-child(1){
+    height: 100vh;
+    width: 100vw;
+}
+
+
+/* Machine Space
+========================================================= */
+
 .machine {
-    background-image: url(/images/maquina-cortada.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 90vh;
-    height: 44vw;
+    height: 100vh;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.death {
-    border: #F00 solid 1px;
-    margin: 4%;
-    width: 20%;
-    color: #FFF;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.machinePhoto {
+    height: 100%;
+}
+
+.machinePhoto img:nth-child(1) {
+    height: 100%;
 }
 
 .juego {
+    z-index: -1;
+    transform: translateY(-55.5vh);
+    height: 38.5%;
+    width: 62%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
-.juego img:nth-child(1) {
-    width: 62%;
-    transform: translateY(375px);
+
+.juego img:first-child {
+    height: 100%;
     z-index: -1;
 }
 
+.members_avatar {
+position: fixed;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+
+}
+
+.avatares {
+    height: 8vh;
+}
+
+/* List coders
+========================================================= */
+
+.coders {
+    margin-left: 5vw;
+    margin-top: 15%;
+    width: 20%;
+    height: auto;
+    color: rgb(142, 142, 142);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 4vh;
+}
+
+/* List death
+========================================================= */
+
+.death {
+    margin-top: 15%;
+    margin-right: 5vw;
+    width: 20%;
+    height: auto;
+    color: #841010;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 4vh;
+}
+
+h2 {
+    color: rgb(0, 0, 0) ;
+    text-shadow: 1px 1px 2px #841010, 0 0 1em rgb(234, 234, 255), 0 0 0.2em rgb(177, 177, 177);
+    margin-bottom: 10%;
+    font-size: 3vh;
+}
+
+ul {
+    font-size: 2vh;
+    list-style: none;
+}
+
+/* Buttons
+========================================================= */
+
+.buttons {
+    transform: translateY(-52vh);
+    width: 12%;
+}
+
+.buttonRed {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/********************************
+***           POPUP           ***
+********************************/
+
 #overlay {
+    z-index: 1;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -91,41 +186,42 @@ body {
     text-decoration: none;
     color: #F00;
     transition: all 200ms;
+    cursor: pointer;
+
+}
+
+.playWith{
+    font-family:'3 theHard';
 }
 
 .copy {
+    bottom: 0;
     display: flex;
     align-items: center;
     color: white;
     background: linear-gradient(45deg, black, grey, rgb(255, 70, 42));
-    height: 8vh;
+    height: 3vw;
     padding-left: 12vh;
 
 }
+
+/********************************
+***           VIDEO           ***
+********************************/
+
 video {
     width: 100%;
     position: absolute;
     z-index: -1;   
 }
+
 .press {
     position: fixed;
     margin-top: 80vh;
-    height: 10vh;
+    height: 1vh;
     width: 15vw;
     color: #F00;
     background-color: black;
     cursor: pointer;
 }
-
-.buttonRed {
-    height: 50px;
-    width: 100px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transform: translateY(425px);
-    margin: 15px;
-}
-
-
 
