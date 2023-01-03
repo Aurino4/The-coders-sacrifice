@@ -74,13 +74,16 @@ body {
 .members_avatar {
 position: fixed;
 display: flex;
+align-content: center;
+height: 40vh;
 transform: translateY(0vh)
+
 }
 .avatares {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 6vw;
+    height: 4vw;
 }
 
 /* List coders
@@ -184,6 +187,8 @@ ul {
     text-decoration: none;
     color: #F00;
     transition: all 200ms;
+    cursor: pointer;
+
 }
 .playWith{
     font-family:'3 theHard';

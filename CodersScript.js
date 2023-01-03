@@ -8,7 +8,6 @@ cerrar.onclick = function cerrarPopUp() {
 }
 
 var candidatos = []
-//let candidatos = []
 let muertos = []
 
 
