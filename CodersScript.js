@@ -18,6 +18,7 @@ function getRandomInt(max) {
 button1.onclick = function muerte() {
   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
   muertos.push(muerto[0].name)
+  document.querySelector(".printMuerto").innerHTML = "Has matado a " + muerto.pop
   printing() 
 }
 
@@ -48,6 +49,7 @@ function printing() {
   document.getElementById("coders-list").innerHTML = createList('CANDIDATOS')
   document.getElementById("members").innerHTML = createList('IMG')
   document.getElementById("death").innerHTML = createList('MUERTOS')
+  document.querySelector(".printMuerto").innerHTML = "Has matado a " + muerto.pop
 }
 
 button_añadir.onclick = function añadir() {
@@ -76,3 +78,4 @@ function avatarSelection() {
   './images/Sheila.png','./images/Stan.png','./images/timmy.png','./images/Token.png','./images/tweek.png','./images/vaca.png','./images/wendy.png']
   return imgArray[getRandomInt(imgArray.length)]
 }
+
