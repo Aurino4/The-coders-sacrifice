@@ -76,6 +76,12 @@ function añadir() {
 
 button_añadir.onclick = añadir()
 
+function enter(e){
+  if(e.keyCode == 13){
+       añadir();
+  }
+}
+
 
 function avatarSelection() {
   var imgArray = ['./images/cartman.png','./images/cheff.png','./images/clyde.png','./images/jimbo.png',
