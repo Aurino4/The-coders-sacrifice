@@ -23,14 +23,14 @@ function getRandomInt(max) {
 
 function muerte() {
   if ((!(candidatos.length == 0)) && (muertoPopup == false)) {
-  let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
-  muertos.push(muerto[0].name)
-  muertoPopup = true
-  muertoOverlay.style.display = "flex";
-  muertoOverlay.innerHTML = `<p>Has matado a ${muerto[0].name}</p>`
-  printing() 
-  playSound('SHOT')  
-  } 
+    let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
+    muertos.push(muerto[0].name)
+    muertoPopup = true
+    muertoOverlay.style.display = "flex";
+    muertoOverlay.innerHTML = `<p>Has matado a ${muerto[0].name}</p>`
+    printing()
+    playSound('SHOT')
+  }
 
   if (candidatos.length == 0) {
     muertoOverlay.style.display = "flex";
@@ -42,9 +42,9 @@ function muerte() {
 
 function reload() {
   if (muertoPopup == true) {
-  muertoOverlay.style.display = "none";
-  muertoPopup = false
-  playSound('RELOAD')
+    muertoOverlay.style.display = "none";
+    muertoPopup = false
+    playSound('RELOAD')
   }
 }
 
@@ -96,29 +96,57 @@ function playSound(type) {
 
 function añadir() {
   let value = document.getElementById('box').value
-  candidatos.push({name:value, image:avatarSelection()})
-  document.getElementById('box').value = ""; 
+  candidatos.push({ name: value, image: avatarSelection() })
+  document.getElementById('box').value = "";
   printing()
 }
 
 
-function enter(e){
-  if(e.keyCode == 13){
-       añadir();
+function enter(e) {
+  if (e.keyCode == 13) {
+    añadir();
   }
 }
+
+function changeToPress(color) {
+  let buttonRedPress = document.querySelector(".buttonRedPress")
+  let buttonWhitePress = document.querySelector(".buttonWhitePress")
+  switch (color) {
+    case 'RED':
+      buttonRed.style.display = "none"
+      buttonRedPress.style.display = "block"
+      setTimeout(() => {
+        buttonRed.style.display = "block"
+        buttonRedPress.style.display = "none"
+      }, 200)
+      break;
+    case 'WHITE':
+      buttonWhite.style.display = "none"
+      buttonWhitePress.style.display = "block"
+      setTimeout(() => {
+        buttonWhite.style.display = "block"
+        buttonWhitePress.style.display = "none"
+      }, 200)
+      break
+    default:
+      break;
+  }
+}
+
+
 
 buttonRed.addEventListener("click", muerte)
 buttonWhite.addEventListener("click", reload)
 button_añadir.addEventListener("click", añadir)
-inputCandidatos.addEventListener("keypress", (e) => {enter(e)})
-
+inputCandidatos.addEventListener("keypress", (e) => { enter(e) })
+buttonRed.addEventListener("click", () => { changeToPress('RED') })
+buttonWhite.addEventListener("click", () => { changeToPress('WHITE') })
 
 function avatarSelection() {
-  var imgArray = ['./images/cartman.png','./images/cheff.png','./images/clyde.png','./images/jimbo.png',
-  './images/jimmy.png','./images/Kenny.png','./images/Stan_HanSolo.png','./images/kyle.png','./images/KyleBrother.png','./images/niña_rubia.png',
-  './images/niñaConFlor.png','./images/NiñaRosa.png','./images/pip.png','./images/Randy_eggs.png','./images/Randy.png','./images/Señor_Mackey.png',
-  './images/Sheila.png','./images/Stan.png','./images/timmy.png','./images/Token.png','./images/tweek.png','./images/vaca.png','./images/wendy.png']
+  var imgArray = ['./images/cartman.png', './images/cheff.png', './images/clyde.png', './images/jimbo.png',
+    './images/jimmy.png', './images/Kenny.png', './images/Stan_HanSolo.png', './images/kyle.png', './images/KyleBrother.png', './images/niña_rubia.png',
+    './images/niñaConFlor.png', './images/NiñaRosa.png', './images/pip.png', './images/Randy_eggs.png', './images/Randy.png', './images/Señor_Mackey.png',
+    './images/Sheila.png', './images/Stan.png', './images/timmy.png', './images/Token.png', './images/tweek.png', './images/vaca.png', './images/wendy.png']
   return imgArray[getRandomInt(imgArray.length)]
 }
 
