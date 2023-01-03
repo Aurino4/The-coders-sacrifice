@@ -311,6 +311,10 @@ video {
     z-index: -1;
 }
 
+.audio{
+    position: absolute;
+}
+
 .press {
     position: absolute;
     bottom: 5vh;
