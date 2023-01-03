@@ -97,11 +97,19 @@ body {
 
 }
 .avatares {
-    height: 8vh;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #000000;
 }
 
 .avatares p {
-    -webkit-text-stroke: 2px rgb(145, 28, 28);
+    -webkit-text-stroke: 1px #ffffff;
+    font-family: 'arial';
+    text-transform: uppercase;
+    font-size: 1.5vh;
+    font-weight: 800;
 }
 
 /* List coders
@@ -253,30 +261,29 @@ ul {
 ***           VIDEO           ***
 ********************************/
 
-video {
-    width: 100%;  
-    position: fixed;
-    z-index: -1;
+.audio {
+    position: absolute;
+}
+
+.video {
+    width: 100%;
 }
 
 .press {
-    margin-top: 50vh;
-    margin-left: 45vw;
-    height: 100%;
-    width: 15vw;
+    position: absolute;
     font-family:'Arial';
-    font-size: 4vh;
     color: #841010;
     text-shadow: 1px 1px 2px #841010, 0 0 1em rgb(234, 234, 255), 0 0 0.2em rgb(177, 177, 177);
     border: none;
     background: none;
     cursor: pointer;
+    transform: translateY(-25vh);
+    font-size: 3vh;
 }
 
 .buttonIntro {
     position: fixed;
     display: flex;
     justify-content: center;
-    transform: translatex(-10vh);
 }
 
