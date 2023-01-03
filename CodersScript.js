@@ -54,8 +54,18 @@ button_añadir.onclick = function añadir() {
   let value = document.getElementById('box').value
   candidatos.push({name:value, image:avatarSelection()})
   document.getElementById('box').value = ""; 
-
+  // for (var i = 0; i < candidatos.length; i++){
     printing()
+  //   // candidatos [i]["image"] = avatar()
+  // } 
+  // candidatos = candidatos.concat(palabras);
+
+  // document.getElementById("coders").innerHTML = candidatos.join("<br>");
+  }
+function avatar() {
+  let imagenes = ["./images/kyle.png"]
+  document.getElementById("kyle") = imagenes[0]
+  printing()
 }
 
 
