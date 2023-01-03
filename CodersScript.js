@@ -3,7 +3,10 @@ console.info("hola")
 let overlay = document.getElementById("overlay")
 let cerrar = document.getElementById("cerrar")
 let buttonRed = document.querySelector(".buttonRed")
+let buttonWhite = document.querySelector(".buttonWhite")
 let button_añadir = document.querySelector("#button_añadir")
+let muertoOverlay = document.querySelector(".printMuerto")
+let inputCandidatos = document.querySelector("#box")
 
 cerrar.onclick = function cerrarPopUp() {
   overlay.style.display = "none";
@@ -11,7 +14,7 @@ cerrar.onclick = function cerrarPopUp() {
 
 var candidatos = []
 let muertos = []
-
+let muertoPopup = false
 
 
 function getRandomInt(max) {
@@ -19,11 +22,30 @@ function getRandomInt(max) {
 }
 
 function muerte() {
+  if ((!(candidatos.length == 0)) && (muertoPopup == false)) {
   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
   muertos.push(muerto[0].name)
-  document.querySelector(".printMuerto").innerHTML = "Has matado a " + muerto[0].name
+  muertoPopup = true
+  muertoOverlay.style.display = "flex";
+  muertoOverlay.innerHTML = `<p>Has matado a ${muerto[0].name}</p>`
   printing() 
-  playSound('SHOT')
+  playSound('SHOT')  
+  } 
+
+  if (candidatos.length == 0) {
+    muertoOverlay.style.display = "flex";
+    muertoOverlay.innerHTML = `<p>The END</p><p>Press Reload to play again</p>`
+    muertoPopup = false
+    buttonWhite.innerHTML = `<a href="/video.html"><img src="/images/bottonBlanco.svg"> </a>`
+  }
+}
+
+function reload() {
+  if (muertoPopup == true) {
+  muertoOverlay.style.display = "none";
+  muertoPopup = false
+  playSound('RELOAD')
+  }
 }
 
 
@@ -79,8 +101,18 @@ function añadir() {
   printing()
 }
 
+
+function enter(e){
+  if(e.keyCode == 13){
+       añadir();
+  }
+}
+
 buttonRed.addEventListener("click", muerte)
+buttonWhite.addEventListener("click", reload)
 button_añadir.addEventListener("click", añadir)
+inputCandidatos.addEventListener("keypress", (e) => {enter(e)})
+
 
 function avatarSelection() {
   var imgArray = ['./images/cartman.png','./images/cheff.png','./images/clyde.png','./images/jimbo.png',
