@@ -81,13 +81,35 @@ body {
     flex-wrap: wrap;
 
 }
+.printMuerto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: visible;
+    opacity: 1;
 
+}
 .avatares {
-    height: 8vh;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #000000;
 }
 
 .avatares p {
-    -webkit-text-stroke: 2px rgb(145, 28, 28);
+    -webkit-text-stroke: 1px #ffffff;
+    font-family: 'arial';
+    text-transform: uppercase;
+    font-size: 1.5vh;
+    font-weight: 800;
 }
 
 /* List coders
@@ -140,11 +162,22 @@ ul {
 ========================================================= */
 
 .buttons {
-    transform: translateY(-52vh);
-    width: 12%;
+    transform: translateY(-51vh);
+    display: flex;
+    width: 32%;
 }
 
 .buttonRed {
+    width: 100%;
+    margin-right: 10%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonWhite {
+    margin-left: 10%;
+    margin-right: 10%;
     width: 100%;
     background: none;
     border: none;
@@ -196,6 +229,15 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    
+}
+
+#box {
+    align-items: center;
+    text-align: center;
+    padding: 1.6vh 1.6vh 1.6vh;
+    margin-bottom: 4.8vh;
 }
 
 #cerrar {
@@ -229,17 +271,28 @@ ul {
 ********************************/
 
 video {
-    width: 100%;
+    width: 100%;   
     position: absolute;
     z-index: -1;
 }
 
 .press {
     position: fixed;
-    margin-top: 80vh;
-    height: 1vh;
+    margin-top: 97vh;
+    height: 5vh;
     width: 15vw;
-    color: #F00;
-    background-color: black;
+    font-family:'Arial';
+    font-size: 4vh;
+    color: #841010;
+    text-shadow: 1px 1px 2px #841010, 0 0 1em rgb(234, 234, 255), 0 0 0.2em rgb(177, 177, 177);
+    border: none;
+    background: none;
     cursor: pointer;
 }
+
+.buttonIntro {
+    display: flex;
+    justify-content: center;
+    transform: translatex(-10vh);
+}
+
