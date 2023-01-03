@@ -33,7 +33,7 @@ body {
     z-index: -100;
 }
 
-.background img:nth-child(1){
+.background img:nth-child(1) {
     height: 100vh;
     width: 100vw;
 }
@@ -74,15 +74,20 @@ body {
 }
 
 .members_avatar {
-position: fixed;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
 }
 
 .avatares {
     height: 8vh;
+}
+
+.avatares p {
+    -webkit-text-stroke: 2px rgb(145, 28, 28);
 }
 
 /* List coders
@@ -120,7 +125,7 @@ flex-wrap: wrap;
 }
 
 h2 {
-    color: rgb(0, 0, 0) ;
+    color: rgb(0, 0, 0);
     text-shadow: 1px 1px 2px #841010, 0 0 1em rgb(234, 234, 255), 0 0 0.2em rgb(177, 177, 177);
     margin-bottom: 10%;
     font-size: 3vh;
@@ -157,6 +162,10 @@ ul {
     cursor: pointer;
 }
 
+.buttonRed img {
+    -webkit-user-drag: none;
+}
+
 
 /********************************
 ***           POPUP           ***
@@ -173,7 +182,14 @@ ul {
     visibility: visible;
     opacity: 1;
     display: block;
+
 }
+
+#overlay h2 {
+    margin: 0;
+    text-align: center;
+}
+
 
 #popupBody {
     width: 46%;
@@ -184,7 +200,13 @@ ul {
     position: relative;
     margin: 20% auto;
     transition: all 5s ease-in-out;
+}
 
+.popupContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #cerrar {
@@ -199,8 +221,8 @@ ul {
     cursor: pointer;
 }
 
-.playWith{
-    font-family:'3 theHard';
+.playWith {
+    font-family: '3 theHard';
 }
 
 .copy {
@@ -211,7 +233,6 @@ ul {
     background: linear-gradient(45deg, black, grey, rgb(255, 70, 42));
     height: 3vw;
     padding-left: 12vh;
-
 }
 
 /********************************
@@ -221,7 +242,7 @@ ul {
 video {
     width: 100%;   
     position: absolute;
-    z-index: -1;   
+    z-index: -1;
 }
 
 .press {

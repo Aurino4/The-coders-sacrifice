@@ -8,7 +8,6 @@ cerrar.onclick = function cerrarPopUp() {
 }
 
 var candidatos = []
-//let candidatos = []
 let muertos = []
 
 
@@ -16,10 +15,12 @@ let muertos = []
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
+
 button1.onclick = function muerte() {
   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
   muertos.push(muerto[0].name)
   printing() 
+  playSound('SHOT')
 }
 
 function createList(type) {
@@ -37,7 +38,7 @@ function createList(type) {
       return toPrint
     case 'IMG':
       candidatos.forEach((item, i) => {
-        toPrint += `<div class="avatares"><img src="${item.image}"></div>`
+        toPrint += `<div class="avatares"><img src="${item.image}"><p>${item.name}</p></div>`
       });
       return toPrint
     default:
@@ -51,23 +52,29 @@ function printing() {
   document.getElementById("death").innerHTML = createList('MUERTOS')
 }
 
-button_añadir.onclick = function añadir() {
+function playSound(type) {
+  let audioShot = new Audio('./Audio/disparo.mp3');
+
+  switch (type) {
+    case 'SHOT':
+      audioShot.play()
+      break;
+    case 'RELOAD':
+
+      break;
+    default:
+      break;
+  }
+}
+
+function añadir() {
   let value = document.getElementById('box').value
   candidatos.push({name:value, image:avatarSelection()})
   document.getElementById('box').value = ""; 
-  // for (var i = 0; i < candidatos.length; i++){
-    printing()
-  //   // candidatos [i]["image"] = avatar()
-  // } 
-  // candidatos = candidatos.concat(palabras);
-
-  // document.getElementById("coders").innerHTML = candidatos.join("<br>");
-  }
-function avatar() {
-  let imagenes = ["./images/kyle.png"]
-  document.getElementById("kyle") = imagenes[0]
   printing()
 }
+
+button_añadir.onclick = añadir()
 
 
 function avatarSelection() {
