@@ -5,6 +5,7 @@ let cerrar = document.getElementById("cerrar")
 let buttonRed = document.querySelector(".buttonRed")
 let buttonWhite = document.querySelector(".buttonWhite")
 let button_añadir = document.querySelector("#button_añadir")
+let muertoOverlay = document.querySelector(".printMuerto")
 
 cerrar.onclick = function cerrarPopUp() {
   overlay.style.display = "none";
@@ -24,13 +25,23 @@ function muerte() {
   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
   muertos.push(muerto[0].name)
   muertoPopup = true
+  muertoOverlay.style.display = "flex";
+  muertoOverlay.innerHTML = `<p>Has matado a ${muerto[0].name}</p>`
   printing() 
-  playSound('SHOT')
+  playSound('SHOT')  
   } 
+
+  if (candidatos.length == 0) {
+    muertoOverlay.style.display = "flex";
+    muertoOverlay.innerHTML = `<p>The END</p><p>Press Reload to play again</p>`
+    muertoPopup = false
+    buttonWhite.innerHTML = `<a href="/video.html"><img src="/images/bottonBlanco.svg"> </a>`
+  }
 }
 
 function reload() {
   if (muertoPopup == true) {
+  muertoOverlay.style.display = "none";
   muertoPopup = false
   playSound('RELOAD')
   }
@@ -102,3 +113,4 @@ function avatarSelection() {
   './images/Sheila.png','./images/Stan.png','./images/timmy.png','./images/Token.png','./images/tweek.png','./images/vaca.png','./images/wendy.png']
   return imgArray[getRandomInt(imgArray.length)]
 }
+
