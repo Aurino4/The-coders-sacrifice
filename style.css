@@ -254,15 +254,15 @@ ul {
 ********************************/
 
 video {
-    width: 100%;   
-    position: absolute;
+    width: 100%;  
+    position: fixed;
     z-index: -1;
 }
 
 .press {
-    position: fixed;
-    margin-top: 97vh;
-    height: 5vh;
+    margin-top: 50vh;
+    margin-left: 45vw;
+    height: 100%;
     width: 15vw;
     font-family:'Arial';
     font-size: 4vh;
@@ -274,6 +274,7 @@ video {
 }
 
 .buttonIntro {
+    position: fixed;
     display: flex;
     justify-content: center;
     transform: translatex(-10vh);
