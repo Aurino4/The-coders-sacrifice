@@ -8,7 +8,6 @@ cerrar.onclick = function cerrarPopUp() {
 }
 
 var candidatos = []
-//let candidatos = []
 let muertos = []
 
 
@@ -54,13 +53,14 @@ function printing() {
 }
 
 function playSound(type) {
-  let audioShot = new Audio('./Audio/.mp3');
+  let audioShot = new Audio('./Audio/disparo.mp3');
 
   switch (type) {
     case 'SHOT':
       audioShot.play()
       break;
     case 'RELOAD':
+
       break;
     default:
       break;
