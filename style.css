@@ -82,9 +82,10 @@ body {
 
 }
 .printMuerto {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     z-index: 1;
     position: fixed;
     top: 0;
@@ -94,8 +95,22 @@ body {
     background: rgba(0, 0, 0, 0.7);
     visibility: visible;
     opacity: 1;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #841010;
+    font-size: 4.5vh;
 
 }
+.EndButton {
+    -webkit-text-stroke: 0;
+    margin-top: 1vh;
+    width: 10vw;
+    height: 3.5vh;
+    background-color: #FFF;
+    z-index: 2;
+
+}
+
 .avatares {
     height: 10vh;
     display: flex;
@@ -230,6 +245,12 @@ ul {
     justify-content: center;
     align-items: center;
 }
+#box {
+    align-items: center;
+    text-align: center;
+    padding: 1.6vh 1.6vh 1.6vh;
+    margin-bottom: 4.8vh;
+}
 
 #cerrar {
     position: absolute;
@@ -265,7 +286,7 @@ ul {
     position: absolute;
 }
 
-.video {
+video {
     width: 100%;
 }
 
@@ -282,8 +303,12 @@ ul {
 }
 
 .buttonIntro {
-    position: fixed;
     display: flex;
     justify-content: center;
+    
+}
+.press a{
+    color: #841010;
+    text-decoration: none;
 }
 
