@@ -6,6 +6,7 @@ let buttonRed = document.querySelector(".buttonRed")
 let buttonWhite = document.querySelector(".buttonWhite")
 let button_añadir = document.querySelector("#button_añadir")
 let muertoOverlay = document.querySelector(".printMuerto")
+let inputCandidatos = document.querySelector("#box")
 
 cerrar.onclick = function cerrarPopUp() {
   overlay.style.display = "none";
@@ -110,7 +111,7 @@ function enter(e){
 buttonRed.addEventListener("click", muerte)
 buttonWhite.addEventListener("click", reload)
 button_añadir.addEventListener("click", añadir)
-
+inputCandidatos.addEventListener("keypress", (e) => {enter(e)})
 
 
 function avatarSelection() {
