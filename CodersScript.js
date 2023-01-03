@@ -100,6 +100,13 @@ function añadir() {
   printing()
 }
 
+
+function enter(e){
+  if(e.keyCode == 13){
+       añadir();
+  }
+}
+
 buttonRed.addEventListener("click", muerte)
 buttonWhite.addEventListener("click", reload)
 button_añadir.addEventListener("click", añadir)

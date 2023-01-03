@@ -244,6 +244,15 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    
+}
+
+#box {
+    align-items: center;
+    text-align: center;
+    padding: 1.6vh 1.6vh 1.6vh;
+    margin-bottom: 4.8vh;
 }
 
 #cerrar {
