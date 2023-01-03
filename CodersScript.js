@@ -3,6 +3,7 @@ console.info("hola")
 let overlay = document.getElementById("overlay")
 let cerrar = document.getElementById("cerrar")
 let buttonRed = document.querySelector(".buttonRed")
+let buttonWhite = document.querySelector(".buttonWhite")
 let button_añadir = document.querySelector("#button_añadir")
 
 cerrar.onclick = function cerrarPopUp() {
@@ -11,7 +12,7 @@ cerrar.onclick = function cerrarPopUp() {
 
 var candidatos = []
 let muertos = []
-
+let muertoPopup = false
 
 
 function getRandomInt(max) {
@@ -19,10 +20,20 @@ function getRandomInt(max) {
 }
 
 function muerte() {
+  if ((!(candidatos.length == 0)) && (muertoPopup == false)) {
   let muerto = candidatos.splice(getRandomInt(candidatos.length), 1)
   muertos.push(muerto[0].name)
+  muertoPopup = true
   printing() 
   playSound('SHOT')
+  } 
+}
+
+function reload() {
+  if (muertoPopup == true) {
+  muertoPopup = false
+  playSound('RELOAD')
+  }
 }
 
 
@@ -79,7 +90,10 @@ function añadir() {
 }
 
 buttonRed.addEventListener("click", muerte)
+buttonWhite.addEventListener("click", reload)
 button_añadir.addEventListener("click", añadir)
+
+
 
 function avatarSelection() {
   var imgArray = ['./images/cartman.png','./images/cheff.png','./images/clyde.png','./images/jimbo.png',
