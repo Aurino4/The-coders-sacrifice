@@ -140,11 +140,22 @@ ul {
 ========================================================= */
 
 .buttons {
-    transform: translateY(-52vh);
-    width: 12%;
+    transform: translateY(-51vh);
+    display: flex;
+    width: 32%;
 }
 
 .buttonRed {
+    width: 100%;
+    margin-right: 10%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonWhite {
+    margin-left: 10%;
+    margin-right: 10%;
     width: 100%;
     background: none;
     border: none;
@@ -229,17 +240,28 @@ ul {
 ********************************/
 
 video {
-    width: 100%;
+    width: 100%;   
     position: absolute;
     z-index: -1;
 }
 
 .press {
     position: fixed;
-    margin-top: 80vh;
-    height: 1vh;
+    margin-top: 97vh;
+    height: 5vh;
     width: 15vw;
-    color: #F00;
-    background-color: black;
+    font-family:'Arial';
+    font-size: 4vh;
+    color: #841010;
+    text-shadow: 1px 1px 2px #841010, 0 0 1em rgb(234, 234, 255), 0 0 0.2em rgb(177, 177, 177);
+    border: none;
+    background: none;
     cursor: pointer;
 }
+
+.buttonIntro {
+    display: flex;
+    justify-content: center;
+    transform: translatex(-10vh);
+}
+
