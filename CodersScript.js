@@ -209,9 +209,9 @@ function changePosition(index, ultimaDir, positionX) {
   // }
   // ultimaDir[index] = Math.round(Math.random() > 0.8) ? "izq" : "der"
 
-  if (positionX <= -27) {
+  if (positionX [index] <= -27) {
     ultimaDir[index] = "der"
-  } else if(positionX >= 27){
+  } else if(positionX [index] >= 27){
     ultimaDir[index] = "izq"
   }
 
