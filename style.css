@@ -3,6 +3,10 @@
     padding: 0px;
 }
 
+:root{
+    --positionX: 0;
+}
+
 @font-face {
     font-family: '3 theHard';
     src: url(/fonts/3\ theHard\ way\ RMX.ttf);
@@ -111,15 +115,23 @@ body {
 
 }
 
-.avatares {
+.avatar {
     height: 10vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     color: #000000;
+    position: absolute;
+    transform: translateX(var(--positionX));
+    transition: all 5s;
+    transition-timing-function: ease;
 }
 
-.avatares p {
+.avatares-img{
+    height: 100%;
+}
+
+.avatares-p {
     -webkit-text-stroke: 1px #ffffff;
     font-family: 'arial';
     text-transform: uppercase;
