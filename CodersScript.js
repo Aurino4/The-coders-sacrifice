@@ -259,9 +259,6 @@ function moverJugador(i) {
 }
 
 
-let nombre1 = ["carlos", "Jeniffer", "Aurino"]
 
-localStorage.setItem("nombre", JSON.stringify(nombre1))
-let nombre = JSON.parse(localStorage.getItem("nombre")) //carlos
 
-console.log(nombre);
+let bodySize = document

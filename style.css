@@ -35,6 +35,7 @@ body {
 .background {
     position: fixed;
     z-index: -100;
+    
 }
 
 .background img:nth-child(1) {
@@ -360,8 +361,6 @@ video {
     text-decoration: none;
     font-size: 3.5vh;
 }
-
-
 
 @media only screen and (max-width: 800px) {
     .coders{
