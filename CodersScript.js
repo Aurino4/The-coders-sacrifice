@@ -231,7 +231,7 @@ function changePosition(index, ultimaDir, positionX) {
   color: #000000;
   position: absolute;
   transform: translateX(${positionX[index]}vh);
-  transition: all 5s;
+  transition: all 1s;
   transition-timing-function: linear;
   
   `
