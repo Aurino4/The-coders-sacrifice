@@ -7,6 +7,8 @@ let buttonWhite = document.querySelector(".buttonWhite")
 let button_añadir = document.querySelector("#button_añadir")
 let muertoOverlay = document.querySelector(".printMuerto")
 let inputCandidatos = document.querySelector("#box")
+localStorage.removeItem("ultimaDir")
+localStorage.removeItem("positionX")
 
 cerrar.onclick = function cerrarPopUp() {
   overlay.style.display = "none";
@@ -64,7 +66,7 @@ function createList(type) {
       return toPrint
     case 'IMG':
       candidatos.forEach((item, i) => {
-        toPrint += `<div class="avatares"><img src="${item.image}"><p>${item.name}</p></div>`
+        toPrint += `<div class="avatares-${i}"><p class="avatares-p">${item.name}</p><img class="avatares-img" src="${item.image}"></div>`
       });
       return toPrint
     default:
@@ -93,12 +95,22 @@ function playSound(type) {
       break;
   }
 }
-
+let already = true
 function añadir() {
   let value = document.getElementById('box').value
   candidatos.push({ name: value, image: avatarSelection() })
   document.getElementById('box').value = "";
   printing()
+  // for (let i = 0; i < candidatos.length; i++) {
+  //   changePosition(i)
+  // }
+  
+  swapDirection()
+  if (already == true) {
+      setInterval(() => {swapDirection()}, 500);
+      already = false
+      console.log("fucniona");
+  }
 }
 
 
@@ -150,3 +162,102 @@ function avatarSelection() {
   return imgArray[getRandomInt(imgArray.length)]
 }
 
+let cssVar = document.querySelector(":root")
+let newIndex = []
+
+function swapDir(i, ultimaDir) {
+
+  if (ultimaDir[i] == 'izq') {
+    ultimaDir[i] = 'der';
+  }else { 
+    ultimaDir[i] = 'izq'; 
+  }
+  return ultimaDir
+}
+
+function swapDirection() {
+  for (let i = 0; i < candidatos.length; i++) {
+    if (!localStorage.getItem("ultimaDir")) {
+      var ultimaDir = ["der"]
+    } else {
+      var ultimaDir = JSON.parse(localStorage.getItem("ultimaDir"))
+    }
+    if (!localStorage.getItem("positionX")) {
+      var positionX = []
+      positionX[i] = Math.ceil(Math.random() * 27) * (Math.round(Math.random()) ? 1 : -1)
+      console.log(positionX);
+    } else {
+      positionX = JSON.parse(localStorage.getItem("positionX"))
+      if (positionX[i] == null) {
+        positionX[i] = Math.ceil(Math.random() * 27) * (Math.round(Math.random()) ? 1 : -1)
+      }
+    }
+    
+    if (Math.random() > 0.8 ) {
+      
+      changePosition(i, swapDir(i, ultimaDir), positionX)
+    }else {
+      changePosition(i, ultimaDir, positionX);
+    }
+  }
+}
+
+function changePosition(index, ultimaDir, positionX) {
+  // if (newIndex[index] == false) {
+  // positionX[i] = Math.ceil(Math.random() * 27) * (Math.round(Math.random()) ? 1 : -1)
+  // newIndex[index] = true
+  // }
+  // ultimaDir[index] = Math.round(Math.random() > 0.8) ? "izq" : "der"
+
+  if (positionX <= -27) {
+    ultimaDir[index] = "der"
+  } else if(positionX >= 27){
+    ultimaDir[index] = "izq"
+  }
+
+  if (ultimaDir[index] == 'izq') { 
+    positionX[index] -= 1; 
+  }else if(ultimaDir[index] == 'der') {
+    positionX[index] += 1;  
+  }
+  localStorage.setItem("ultimaDir", JSON.stringify(ultimaDir))
+  localStorage.setItem("positionX", JSON.stringify(positionX))
+
+  // var position = Math.ceil(Math.random() * 27) * (Math.round(Math.random()) ? 1 : -1)
+  document.querySelector(`.avatares-${index}`).style = `height: 10vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #000000;
+  position: absolute;
+  transform: translateX(${positionX[index]}vh);
+  transition: all 5s;
+  transition-timing-function: linear;
+  
+  `
+}
+
+
+
+
+
+
+
+function miFuncionLoca() {
+  flagPada++;
+  if (flagPada > 100000) { recargarJuego(); }
+  for (let i = 0; i < candidatos.length; i++) {
+    if (Math.random() > 1) {
+      moverJugador(i, swapDir(i))
+    }
+    moverJugador(i, ultimaDir);
+  }
+}
+
+
+
+
+function moverJugador(i) {
+  if (ultimaDir[i] == 'izq') { posicion[i] -= 1; }
+  else { posicion[i] += 1; }
+}

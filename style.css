@@ -3,6 +3,10 @@
     padding: 0px;
 }
 
+:root{
+    --positionX: 0;
+}
+
 @font-face {
     font-family: '3 theHard';
     src: url(/fonts/3\ theHard\ way\ RMX.ttf);
@@ -112,15 +116,23 @@ body {
 
 }
 
-.avatares {
+.avatar {
     height: 10vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     color: #000000;
+    position: absolute;
+    transform: translateX(var(--positionX));
+    transition: all 5s;
+    transition-timing-function: ease;
 }
 
-.avatares p {
+.avatares-img{
+    height: 100%;
+}
+
+.avatares-p {
     -webkit-text-stroke: 1px #ffffff;
     font-family: 'arial';
     text-transform: uppercase;
@@ -307,33 +319,44 @@ ul {
 ********************************/
 
 .video {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+video {
     width: 100%;
-    z-index: -1;}
-    
+    z-index: -1;
+}
+
 .audio{
     position: absolute;
 }
 
 .press {
-    position: absolute;
-    bottom: 5vh;
     font-family:'Arial';
-    font-size: 4vh;
+    font-size: 100%;
     text-shadow: 1px 1px 2px #841010, 0 0 1em rgb(234, 234, 255), 0 0 0.2em rgb(177, 177, 177);
     border: none;
     background: none;
     cursor: pointer;
+    height: 100%;
+}
+
+
+.buttonIntro {
+    transform: translateY(-25vh);
+    display: flex;
+    justify-content: center;
+    height: 100%;
 }
 
 .press a{
     color: #841010;
     text-decoration: none;
-}
-
-.buttonIntro {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
+    font-size: 3.5vh;
 }
 
 .press a {
