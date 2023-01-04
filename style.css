@@ -3,10 +3,6 @@
     padding: 0px;
 }
 
-:root{
-    --positionX: 0;
-}
-
 @font-face {
     font-family: '3 theHard';
     src: url(/fonts/3\ theHard\ way\ RMX.ttf);
@@ -17,6 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 100vw;
 }
 
 /********************************
@@ -28,6 +25,8 @@ body {
     display: flex;
     justify-content: space-around;
     font-family: '3 theHard';
+    width: 100%;
+    height: 100%;
 }
 
 /* Background
@@ -48,7 +47,7 @@ body {
 ========================================================= */
 
 .machine {
-    height: 100vh;
+    height: 100%;
     width: auto;
     display: flex;
     flex-direction: column;
@@ -84,8 +83,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
 
 }
+
 .printMuerto {
     display: none;
     align-items: center;
@@ -116,20 +118,17 @@ body {
 
 }
 
-.avatar {
+.avatares {
     height: 10vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     color: #000000;
-    position: absolute;
-    transform: translateX(var(--positionX));
-    transition: all 1s;
-    transition-timing-function: ease;
 }
 
 .avatares-img{
     height: 100%;
+    width: 100%;
 }
 
 .avatares-p {
@@ -144,7 +143,7 @@ body {
 ========================================================= */
 
 .coders {
-    margin-left: 5vw;
+    margin-left: 5%;
     margin-top: 15%;
     width: 20%;
     height: auto;
@@ -162,7 +161,7 @@ body {
 
 .death {
     margin-top: 15%;
-    margin-right: 5vw;
+    margin-right: 5%;
     width: 20%;
     height: auto;
     color: #841010;
@@ -287,12 +286,6 @@ ul {
     padding: 1.6vh 1.6vh 1.6vh;
     margin-bottom: 4.8vh;
 }
-#box {
-    align-items: center;
-    text-align: center;
-    padding: 1.6vh 1.6vh 1.6vh;
-    margin-bottom: 4.8vh;
-}
 
 #cerrar {
     position: absolute;
@@ -337,9 +330,8 @@ video {
     z-index: -1;
 }
 
-
 .audio{
-    transform: translateY(-25vh);
+    position: absolute;
 }
 
 .press {
@@ -360,21 +352,18 @@ video {
     height: 100%;
 }
 
-
-.buttonIntro {
-    transform: translateY(-25vh);
-    display: flex;
-    justify-content: center;
-    
-}
 .press a{
     color: #841010;
     text-decoration: none;
     font-size: 3.5vh;
 }
 
-.press a {
-    color:#841010;
-    text-decoration: none;
+@media only screen and (max-width: 800px) {
+    .coders{
+        display: none;
+    }
 
+    .death{
+        display: none;
+    }
 }

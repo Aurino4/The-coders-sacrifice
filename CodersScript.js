@@ -32,6 +32,7 @@ function muerte() {
     muertoOverlay.innerHTML = `<p>Has matado a ${muerto[0].name}</p>`
     printing()
     playSound('SHOT')
+    swapDirection()
   }
 
   if (candidatos.length == 0) {
@@ -75,13 +76,13 @@ function createList(type) {
 }
 
 function printing() {
-  document.getElementById("coders-list").innerHTML = createList('CANDIDATOS')
-  document.getElementById("members").innerHTML = createList('IMG')
-  document.getElementById("death").innerHTML = createList('MUERTOS')
+  document.querySelector("#coders-list").innerHTML = createList('CANDIDATOS')
+  document.querySelector("#members").innerHTML = createList('IMG')
+  document.querySelector("#death").innerHTML = createList('MUERTOS')
 }
 
 function playSound(type) {
-  let audioShot = new Audio('./Audio/disparo.mp3');
+  const audioShot = new Audio('./Audio/disparo.mp3');
   const audioReload = new Audio('./Audio/recargar.mp3');
 
   switch (type) {
@@ -95,15 +96,15 @@ function playSound(type) {
       break;
   }
 }
+
+
 let already = true
 function añadir() {
   let value = document.getElementById('box').value
   candidatos.push({ name: value, image: avatarSelection() })
   document.getElementById('box').value = "";
   printing()
-  // for (let i = 0; i < candidatos.length; i++) {
-  //   changePosition(i)
-  // }
+
   
   swapDirection()
   if (already == true) {
@@ -145,8 +146,6 @@ function changeToPress(color) {
   }
 }
 
-
-
 buttonRed.addEventListener("click", muerte)
 buttonWhite.addEventListener("click", reload)
 button_añadir.addEventListener("click", añadir)
@@ -166,7 +165,6 @@ let cssVar = document.querySelector(":root")
 let newIndex = []
 
 function swapDir(i, ultimaDir) {
-
   if (ultimaDir[i] == 'izq') {
     ultimaDir[i] = 'der';
   }else { 
@@ -192,9 +190,8 @@ function swapDirection() {
         positionX[i] = Math.ceil(Math.random() * 27) * (Math.round(Math.random()) ? 1 : -1)
       }
     }
-    
+
     if (Math.random() > 0.8 ) {
-      
       changePosition(i, swapDir(i, ultimaDir), positionX)
     }else {
       changePosition(i, ultimaDir, positionX);
@@ -224,7 +221,7 @@ function changePosition(index, ultimaDir, positionX) {
   localStorage.setItem("positionX", JSON.stringify(positionX))
 
   // var position = Math.ceil(Math.random() * 27) * (Math.round(Math.random()) ? 1 : -1)
-  document.querySelector(`.avatares-${index}`).style = `height: 10vh;
+  document.querySelector(`.avatares-${index}`).style = `height:10vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -233,7 +230,7 @@ function changePosition(index, ultimaDir, positionX) {
   transform: translateX(${positionX[index]}vh);
   transition: all 1s;
   transition-timing-function: linear;
-  
+  bottom: 1vh;
   `
 }
 
@@ -243,21 +240,8 @@ function changePosition(index, ultimaDir, positionX) {
 
 
 
-function miFuncionLoca() {
-  flagPada++;
-  if (flagPada > 100000) { recargarJuego(); }
-  for (let i = 0; i < candidatos.length; i++) {
-    if (Math.random() > 1) {
-      moverJugador(i, swapDir(i))
-    }
-    moverJugador(i, ultimaDir);
-  }
-}
 
 
 
 
-function moverJugador(i) {
-  if (ultimaDir[i] == 'izq') { posicion[i] -= 1; }
-  else { posicion[i] += 1; }
-}
+
