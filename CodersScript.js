@@ -32,6 +32,7 @@ function muerte() {
     muertoOverlay.innerHTML = `<p>Has matado a ${muerto[0].name}</p>`
     printing()
     playSound('SHOT')
+    swapDirection()
   }
 
   if (candidatos.length == 0) {
@@ -205,9 +206,9 @@ function changePosition(index, ultimaDir, positionX) {
   // }
   // ultimaDir[index] = Math.round(Math.random() > 0.8) ? "izq" : "der"
 
-  if (positionX[index] <= -27) {
+  if (positionX [index] <= -27) {
     ultimaDir[index] = "der"
-  } else if(positionX[index] >= 27){
+  } else if(positionX [index] >= 27){
     ultimaDir[index] = "izq"
   }
 
@@ -220,7 +221,7 @@ function changePosition(index, ultimaDir, positionX) {
   localStorage.setItem("positionX", JSON.stringify(positionX))
 
   // var position = Math.ceil(Math.random() * 27) * (Math.round(Math.random()) ? 1 : -1)
-  document.querySelector(`.avatares-${index}`).style = `height:100px;
+  document.querySelector(`.avatares-${index}`).style = `height:10vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -229,7 +230,7 @@ function changePosition(index, ultimaDir, positionX) {
   transform: translateX(${positionX[index]}vh);
   transition: all 1s;
   transition-timing-function: linear;
-  bottom: 5vh;
+  bottom: 1vh;
   `
 }
 
@@ -239,26 +240,8 @@ function changePosition(index, ultimaDir, positionX) {
 
 
 
-function miFuncionLoca() {
-  flagPada++;
-  if (flagPada > 100000) { recargarJuego(); }
-  for (let i = 0; i < candidatos.length; i++) {
-    if (Math.random() > 1) {
-      moverJugador(i, swapDir(i))
-    }
-    moverJugador(i, ultimaDir);
-  }
-}
 
 
 
 
-function moverJugador(i) {
-  if (ultimaDir[i] == 'izq') { posicion[i] -= 1; }
-  else { posicion[i] += 1; }
-}
 
-
-
-
-let bodySize = document
