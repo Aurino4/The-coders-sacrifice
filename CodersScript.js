@@ -209,9 +209,9 @@ function changePosition(index, ultimaDir, positionX) {
   // }
   // ultimaDir[index] = Math.round(Math.random() > 0.8) ? "izq" : "der"
 
-  if (positionX <= -27) {
+  if (positionX[index] <= -27) {
     ultimaDir[index] = "der"
-  } else if(positionX >= 27){
+  } else if(positionX[index] >= 27){
     ultimaDir[index] = "izq"
   }
 
@@ -231,7 +231,7 @@ function changePosition(index, ultimaDir, positionX) {
   color: #000000;
   position: absolute;
   transform: translateX(${positionX[index]}vh);
-  transition: all 5s;
+  transition: all 1s;
   transition-timing-function: linear;
   
   `
@@ -261,3 +261,6 @@ function moverJugador(i) {
   if (ultimaDir[i] == 'izq') { posicion[i] -= 1; }
   else { posicion[i] += 1; }
 }
+
+
+
