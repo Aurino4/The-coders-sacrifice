@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 /********************************
@@ -138,7 +138,10 @@ body {
     font-size: 1.5vh;
     font-weight: 800;
 }
+.splash {
+    position: fixed;
 
+}
 /* List coders
 ========================================================= */
 
