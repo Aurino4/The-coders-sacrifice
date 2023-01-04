@@ -82,9 +82,10 @@ body {
 
 }
 .printMuerto {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     z-index: 1;
     position: fixed;
     top: 0;
@@ -94,8 +95,22 @@ body {
     background: rgba(0, 0, 0, 0.7);
     visibility: visible;
     opacity: 1;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #841010;
+    font-size: 4.5vh;
+}
+
+.EndButton {
+    -webkit-text-stroke: 0;
+    margin-top: 1vh;
+    width: 10vw;
+    height: 3.5vh;
+    background-color: #FFF;
+    z-index: 2;
 
 }
+
 .avatares {
     height: 10vh;
     display: flex;
@@ -168,6 +183,16 @@ ul {
 }
 
 .buttonRed {
+    display: block;
+    width: 100%;
+    margin-right: 10%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonRedPress{
+    display: none;
     width: 100%;
     margin-right: 10%;
     background: none;
@@ -176,6 +201,16 @@ ul {
 }
 
 .buttonWhite {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonWhitePress {
+    display: none;
     margin-left: 10%;
     margin-right: 10%;
     width: 100%;
@@ -229,6 +264,15 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    
+}
+
+#box {
+    align-items: center;
+    text-align: center;
+    padding: 1.6vh 1.6vh 1.6vh;
+    margin-bottom: 4.8vh;
 }
 
 #cerrar {
@@ -261,32 +305,44 @@ ul {
 ***           VIDEO           ***
 ********************************/
 
-.audio {
-    position: absolute;
+.video {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 video {
     width: 100%;
+    z-index: -1;
+}
+
+.audio{
+    position: absolute;
 }
 
 .press {
     font-family:'Arial';
-    color: #841010;
+    font-size: 100%;
     text-shadow: 1px 1px 2px #841010, 0 0 1em rgb(234, 234, 255), 0 0 0.2em rgb(177, 177, 177);
     border: none;
     background: none;
     cursor: pointer;
-    font-size: 3vh;
-    transform: translateY(-25vh);
+    height: 100%;
 }
 
+
 .buttonIntro {
+    transform: translateY(-25vh);
     display: flex;
     justify-content: center;
+    height: 100%;
 }
 
 .press a{
     color: #841010;
     text-decoration: none;
+    font-size: 3.5vh;
 }
 
