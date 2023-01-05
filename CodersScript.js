@@ -32,6 +32,7 @@ function muerte() {
     muertoOverlay.innerHTML = `<p>Has matado a ${muerto[0].name}</p>`
     printing()
     playSound('SHOT')
+    splash("ADD")
     swapDirection()
   }
 
@@ -48,6 +49,7 @@ function reload() {
     muertoOverlay.style.display = "none";
     muertoPopup = false
     playSound('RELOAD')
+    splash("CLEAN")
   }
 }
 
@@ -234,7 +236,22 @@ function changePosition(index, ultimaDir, positionX) {
   `
 }
 
-
+function splash(type) {
+   let splash = document.querySelector(".splash")
+   switch (type) {
+    case "ADD":
+      splash.innerHTML =`<img class="splash-img" src="./images/splash.png">`
+      
+      break;
+    case "CLEAN": 
+      splash.innerHTML=""
+      let cleanAudio = new Audio('./Audio/clean.mp3');
+      cleanAudio.play()
+      break;
+    default:
+      break;
+   }
+}
 
 
 
