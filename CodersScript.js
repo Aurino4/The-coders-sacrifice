@@ -260,5 +260,3 @@ function splash(type) {
 
 
 
-
-
