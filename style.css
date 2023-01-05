@@ -85,6 +85,7 @@ body {
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 
 }
 
@@ -128,7 +129,6 @@ body {
 
 .avatares-img{
     height: 100%;
-    width: 100%;
 }
 
 .avatares-p {
@@ -140,6 +140,7 @@ body {
 }
 .splash {
     position: fixed;
+    opacity: 0.7;
 
 }
 /* List coders
@@ -360,6 +361,37 @@ video {
     text-decoration: none;
     font-size: 3.5vh;
 }
+
+.audio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    width: 6vh;
+    position: relative;
+    top: 4vh;
+    left: 4vh;
+    cursor: pointer;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: #1b1b1be0;
+
+}
+
+.audio-line{
+    height: 0.5vh;
+    width: 95%;
+    background-color: #841010;
+    position: absolute;
+    top: 48%;
+    transform: rotate(45deg);
+}
+
+.audio img{
+    height: 80%;
+}
+
+
 
 @media only screen and (max-width: 800px) {
     .coders{
